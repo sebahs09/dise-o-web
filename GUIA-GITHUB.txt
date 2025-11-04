@@ -1,0 +1,269 @@
+═══════════════════════════════════════════════════════════════════
+    GUÍA COMPLETA - SUBIR TU PORTAFOLIO A GITHUB
+    Hosting Gratuito con GitHub Pages
+═══════════════════════════════════════════════════════════════════
+
+✅ YA ESTÁ LISTO LOCALMENTE
+Tu proyecto ya está inicializado con Git y tiene el primer commit.
+
+═══════════════════════════════════════════════════════════════════
+📋 PASO 1: CREAR CUENTA EN GITHUB (Si no tienes)
+═══════════════════════════════════════════════════════════════════
+
+1. Ve a: https://github.com
+2. Click en "Sign up"
+3. Completa:
+   - Username (elige algo profesional, ej: sebastian-martinez-web)
+   - Email
+   - Password
+4. Verifica tu email
+5. ¡Listo!
+
+═══════════════════════════════════════════════════════════════════
+📋 PASO 2: CREAR REPOSITORIO EN GITHUB
+═══════════════════════════════════════════════════════════════════
+
+1. Inicia sesión en GitHub
+2. Click en el botón "+" arriba a la derecha
+3. Selecciona "New repository"
+4. Completa:
+   
+   Repository name: diseno-web-portfolio
+   (O el nombre que prefieras, sin espacios ni acentos)
+   
+   Description: Portafolio profesional de diseño web freelance
+   
+   ⚠️ IMPORTANTE: Marca como "Public" (para usar GitHub Pages gratis)
+   
+   ❌ NO marques "Add a README file" (ya lo tienes)
+   ❌ NO agregues .gitignore (ya lo tienes)
+   ❌ NO agregues license por ahora
+
+5. Click en "Create repository"
+
+═══════════════════════════════════════════════════════════════════
+📋 PASO 3: CONECTAR TU PROYECTO CON GITHUB
+═══════════════════════════════════════════════════════════════════
+
+Después de crear el repositorio, GitHub te mostrará instrucciones.
+Copia el URL que aparece (algo como):
+https://github.com/TU-USUARIO/diseno-web-portfolio.git
+
+Luego ejecuta estos comandos en tu terminal:
+
+1. Abre PowerShell o CMD en la carpeta del proyecto:
+   cd "C:\Users\sebas\Desktop\diseño web"
+
+2. Agrega el repositorio remoto:
+   git remote add origin https://github.com/TU-USUARIO/diseno-web-portfolio.git
+
+3. Renombra la rama a main (estándar actual):
+   git branch -M main
+
+4. Sube los archivos:
+   git push -u origin main
+
+   ⚠️ Te pedirá autenticación:
+   - Username: tu usuario de GitHub
+   - Password: usa un Personal Access Token (ver abajo)
+
+═══════════════════════════════════════════════════════════════════
+🔑 CREAR PERSONAL ACCESS TOKEN (Para autenticación)
+═══════════════════════════════════════════════════════════════════
+
+GitHub ya no acepta contraseñas normales, necesitas un token:
+
+1. Ve a GitHub → Click en tu foto (arriba derecha)
+2. Settings
+3. Scroll hasta el final → Developer settings
+4. Personal access tokens → Tokens (classic)
+5. Generate new token → Generate new token (classic)
+6. Completa:
+   - Note: "Token para subir portafolio"
+   - Expiration: 90 days (o lo que prefieras)
+   - Scopes: Marca "repo" (todos los checks de repo)
+7. Click en "Generate token"
+8. ⚠️ COPIA EL TOKEN AHORA (no podrás verlo después)
+9. Guárdalo en un lugar seguro
+
+Cuando git push te pida password, pega este token.
+
+═══════════════════════════════════════════════════════════════════
+📋 PASO 4: ACTIVAR GITHUB PAGES (Hosting Gratis)
+═══════════════════════════════════════════════════════════════════
+
+1. Ve a tu repositorio en GitHub
+2. Click en "Settings" (arriba)
+3. En el menú izquierdo, busca "Pages"
+4. En "Source" selecciona:
+   - Branch: main
+   - Folder: / (root)
+5. Click en "Save"
+6. ¡Espera 1-2 minutos!
+7. Refresca la página
+8. Verás un mensaje verde con tu URL:
+   "Your site is published at https://TU-USUARIO.github.io/diseno-web-portfolio/"
+
+═══════════════════════════════════════════════════════════════════
+🎉 ¡LISTO! TU SITIO ESTÁ EN LÍNEA
+═══════════════════════════════════════════════════════════════════
+
+Tu portafolio ahora está disponible en:
+https://TU-USUARIO.github.io/diseno-web-portfolio/
+
+Comparte este link con tus clientes potenciales!
+
+═══════════════════════════════════════════════════════════════════
+🔄 ACTUALIZAR TU SITIO (Cuando hagas cambios)
+═══════════════════════════════════════════════════════════════════
+
+Cada vez que modifiques algo:
+
+1. Abre terminal en la carpeta del proyecto
+2. Ejecuta:
+   git add .
+   git commit -m "Descripción de los cambios"
+   git push
+
+3. Espera 1-2 minutos
+4. Los cambios estarán en línea
+
+═══════════════════════════════════════════════════════════════════
+📝 COMANDOS ÚTILES
+═══════════════════════════════════════════════════════════════════
+
+Ver estado de archivos:
+git status
+
+Ver historial de commits:
+git log --oneline
+
+Ver archivos modificados:
+git diff
+
+Deshacer cambios (antes de commit):
+git checkout -- nombre-archivo.html
+
+Ver repositorio remoto:
+git remote -v
+
+═══════════════════════════════════════════════════════════════════
+⚠️ SOLUCIÓN DE PROBLEMAS COMUNES
+═══════════════════════════════════════════════════════════════════
+
+PROBLEMA: "git: command not found"
+SOLUCIÓN: Instala Git desde https://git-scm.com/download/win
+
+PROBLEMA: "Permission denied"
+SOLUCIÓN: Verifica tu token o credenciales
+
+PROBLEMA: "Repository not found"
+SOLUCIÓN: Verifica que el URL del repositorio sea correcto
+
+PROBLEMA: "El sitio no se actualiza"
+SOLUCIÓN: 
+- Espera 2-3 minutos
+- Limpia caché del navegador (Ctrl + Shift + R)
+- Verifica que el push fue exitoso: git log
+
+PROBLEMA: "Failed to push"
+SOLUCIÓN:
+- Verifica tu conexión a internet
+- Asegúrate de tener permisos en el repositorio
+- Intenta: git pull origin main (por si hay cambios remotos)
+
+═══════════════════════════════════════════════════════════════════
+🎯 PERSONALIZACIÓN DEL README
+═══════════════════════════════════════════════════════════════════
+
+Antes de subir, personaliza README.md:
+
+1. Reemplaza "tu-usuario" con tu usuario real de GitHub
+2. Actualiza los links de contacto
+3. Agrega tus redes sociales reales
+4. Cambia el email de contacto
+
+═══════════════════════════════════════════════════════════════════
+🌟 CONSEJOS PRO
+═══════════════════════════════════════════════════════════════════
+
+1. DOMINIO PERSONALIZADO (Opcional):
+   - Puedes usar tu propio dominio (ej: www.sebastianmartinez.com)
+   - En Settings → Pages → Custom domain
+   - Necesitas configurar DNS en tu proveedor de dominio
+
+2. COMMITS DESCRIPTIVOS:
+   ✅ BIEN: "Agregada sección de testimonios"
+   ✅ BIEN: "Corregido bug en carrito de compras"
+   ❌ MAL: "cambios"
+   ❌ MAL: "fix"
+
+3. ACTUALIZA REGULARMENTE:
+   - Agrega nuevos proyectos
+   - Actualiza precios si cambian
+   - Mejora el diseño continuamente
+
+4. COMPARTE TU PORTAFOLIO:
+   - En tu firma de email
+   - En redes sociales
+   - En tu CV
+   - En plataformas freelance
+
+═══════════════════════════════════════════════════════════════════
+📊 ESTADÍSTICAS (Opcional)
+═══════════════════════════════════════════════════════════════════
+
+Puedes agregar Google Analytics para ver:
+- Cuántas personas visitan tu sitio
+- De dónde vienen
+- Qué páginas ven más
+
+1. Crea cuenta en Google Analytics
+2. Obtén tu código de seguimiento
+3. Agrégalo antes de </head> en index.html
+4. Sube los cambios
+
+═══════════════════════════════════════════════════════════════════
+✅ CHECKLIST FINAL
+═══════════════════════════════════════════════════════════════════
+
+Antes de compartir tu portafolio:
+
+□ Personalicé README.md con mis datos
+□ Actualicé email de contacto en index.html
+□ Actualicé teléfono en index.html
+□ Agregué mis redes sociales reales
+□ Probé todos los botones y links
+□ Verifiqué que se ve bien en móvil
+□ Revisé ortografía en todos los textos
+□ El sitio carga rápido
+□ Todas las funcionalidades funcionan
+
+═══════════════════════════════════════════════════════════════════
+🎓 RECURSOS ADICIONALES
+═══════════════════════════════════════════════════════════════════
+
+Documentación oficial:
+- Git: https://git-scm.com/doc
+- GitHub: https://docs.github.com
+- GitHub Pages: https://pages.github.com
+
+Tutoriales en español:
+- Git básico: https://www.youtube.com/results?search_query=git+tutorial+español
+- GitHub Pages: https://www.youtube.com/results?search_query=github+pages+tutorial
+
+═══════════════════════════════════════════════════════════════════
+📞 AYUDA
+═══════════════════════════════════════════════════════════════════
+
+Si tienes problemas:
+1. Lee los mensajes de error completos
+2. Busca el error en Google
+3. Consulta Stack Overflow
+4. Revisa la documentación oficial
+
+═══════════════════════════════════════════════════════════════════
+
+¡Éxito con tu portafolio en línea! 🚀
+
+═══════════════════════════════════════════════════════════════════

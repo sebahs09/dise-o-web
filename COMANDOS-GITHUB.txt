@@ -1,0 +1,113 @@
+═══════════════════════════════════════════════════════════════════
+    COMANDOS PARA SUBIR A GITHUB
+    Copia y pega estos comandos en orden
+═══════════════════════════════════════════════════════════════════
+
+⚠️ ANTES DE EMPEZAR:
+1. Crea tu repositorio en GitHub (https://github.com/new)
+2. Copia el URL de tu repositorio
+3. Reemplaza "TU-USUARIO" y "TU-REPOSITORIO" en los comandos
+
+═══════════════════════════════════════════════════════════════════
+📋 COMANDOS (Ejecutar en PowerShell o CMD)
+═══════════════════════════════════════════════════════════════════
+
+# 1. Ir a la carpeta del proyecto
+cd "C:\Users\sebas\Desktop\diseño web"
+
+# 2. Verificar que Git está inicializado (debe mostrar archivos)
+git status
+
+# 3. Conectar con GitHub (REEMPLAZA CON TU URL)
+git remote add origin https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+
+# 4. Verificar que se agregó correctamente
+git remote -v
+
+# 5. Renombrar rama a main
+git branch -M main
+
+# 6. Subir archivos a GitHub
+git push -u origin main
+
+# Te pedirá:
+# Username: tu-usuario-de-github
+# Password: tu-personal-access-token (NO tu contraseña normal)
+
+═══════════════════════════════════════════════════════════════════
+🔄 PARA ACTUALIZACIONES FUTURAS
+═══════════════════════════════════════════════════════════════════
+
+# Cuando hagas cambios en tus archivos:
+
+# 1. Ver qué archivos cambiaron
+git status
+
+# 2. Agregar todos los cambios
+git add .
+
+# 3. Hacer commit con mensaje descriptivo
+git commit -m "Descripción de los cambios"
+
+# 4. Subir a GitHub
+git push
+
+═══════════════════════════════════════════════════════════════════
+✅ EJEMPLO COMPLETO (Copia esto y reemplaza TU-USUARIO)
+═══════════════════════════════════════════════════════════════════
+
+cd "C:\Users\sebas\Desktop\diseño web"
+git remote add origin https://github.com/TU-USUARIO/diseno-web-portfolio.git
+git branch -M main
+git push -u origin main
+
+═══════════════════════════════════════════════════════════════════
+🔑 OBTENER PERSONAL ACCESS TOKEN
+═══════════════════════════════════════════════════════════════════
+
+1. Ve a: https://github.com/settings/tokens
+2. Click en "Generate new token" → "Generate new token (classic)"
+3. Dale un nombre: "Token portafolio"
+4. Marca: "repo" (todos los checks)
+5. Click en "Generate token"
+6. COPIA EL TOKEN (no podrás verlo después)
+7. Úsalo como password cuando git push te lo pida
+
+═══════════════════════════════════════════════════════════════════
+🌐 ACTIVAR GITHUB PAGES
+═══════════════════════════════════════════════════════════════════
+
+1. Ve a tu repositorio en GitHub
+2. Settings → Pages (menú izquierdo)
+3. Source: main → / (root) → Save
+4. Espera 1-2 minutos
+5. Tu sitio estará en:
+   https://TU-USUARIO.github.io/TU-REPOSITORIO/
+
+═══════════════════════════════════════════════════════════════════
+⚠️ SI ALGO SALE MAL
+═══════════════════════════════════════════════════════════════════
+
+# Si ya agregaste el remote y quieres cambiarlo:
+git remote remove origin
+git remote add origin https://github.com/NUEVO-URL.git
+
+# Si hay conflictos:
+git pull origin main --allow-unrelated-histories
+git push -u origin main
+
+# Si quieres empezar de nuevo:
+# ⚠️ CUIDADO: Esto borra el historial de Git
+rm -rf .git
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/TU-USUARIO/TU-REPO.git
+git branch -M main
+git push -u origin main
+
+═══════════════════════════════════════════════════════════════════
+
+¡Listo! Sigue la GUIA-GITHUB.txt para más detalles.
+
+═══════════════════════════════════════════════════════════════════
