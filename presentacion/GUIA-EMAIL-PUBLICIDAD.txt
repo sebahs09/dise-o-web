@@ -1,0 +1,264 @@
+═══════════════════════════════════════════════════════════════════
+    GUÍA DE USO - EMAIL DE PUBLICIDAD
+    Para Promocionar tus Servicios a Negocios Locales
+═══════════════════════════════════════════════════════════════════
+
+📧 ARCHIVO: email-publicidad.html
+
+═══════════════════════════════════════════════════════════════════
+🎯 PROPÓSITO DEL EMAIL
+═══════════════════════════════════════════════════════════════════
+
+Este email está diseñado para:
+✅ Captar la atención de dueños de negocios
+✅ Mostrar el problema que tienen (no tener web)
+✅ Presentar tu solución de forma atractiva
+✅ Generar interés y respuestas
+
+═══════════════════════════════════════════════════════════════════
+📝 CÓMO PERSONALIZAR
+═══════════════════════════════════════════════════════════════════
+
+1. DATOS DE CONTACTO:
+   Busca y reemplaza:
+   - contacto@sebastianmartinez.com → Tu email real
+   - +54 9 11 1234-5678 → Tu teléfono real
+   - www.sebastianmartinez.com → Tu sitio web
+   - https://wa.me/5491112345678 → Tu link de WhatsApp
+
+2. TESTIMONIOS (Opcional):
+   Puedes cambiar los testimonios por reales si tienes.
+   Si no tienes, puedes:
+   - Eliminar esa sección completa
+   - Dejarlos como están (son genéricos)
+   - Agregar "Próximamente testimonios reales"
+
+3. OFERTA ESPECIAL:
+   Personaliza la sección de oferta:
+   - Cambia "este mes" por el mes actual
+   - Ajusta los bonuses según lo que quieras ofrecer
+   - Puedes quitar esta sección si no tienes oferta
+
+4. PRECIOS:
+   Si quieres ajustar precios, busca:
+   - $299 (Plan Básico)
+   - $699 (Plan Estándar)
+   - $999 (Plan E-commerce)
+
+═══════════════════════════════════════════════════════════════════
+📤 CÓMO ENVIAR
+═══════════════════════════════════════════════════════════════════
+
+OPCIÓN 1 - Gmail (Recomendado):
+1. Abre email-publicidad.html en tu navegador
+2. Selecciona todo (Ctrl+A) y copia (Ctrl+C)
+3. Abre Gmail → Redactar
+4. Pega en el email
+5. Asunto: "¿Tu negocio necesita presencia web? 🌐"
+6. Enviar
+
+OPCIÓN 2 - Outlook:
+1. Abre Outlook → Nuevo mensaje
+2. Formato → HTML
+3. Copia el contenido de email-publicidad.html
+4. Pega en el mensaje
+5. Enviar
+
+═══════════════════════════════════════════════════════════════════
+✉️ ASUNTOS SUGERIDOS
+═══════════════════════════════════════════════════════════════════
+
+Para negocios sin web:
+• "¿Tu negocio necesita presencia web? 🌐"
+• "[Nombre Negocio] - Propuesta de Diseño Web"
+• "Ayudo a negocios como el tuyo a estar en internet"
+• "¿Cuántos clientes pierdes por no tener web?"
+
+Para negocios con web antigua:
+• "¿Tu sitio web necesita una actualización?"
+• "Diseño web moderno para [Tipo de Negocio]"
+• "Renueva la imagen digital de tu negocio"
+
+═══════════════════════════════════════════════════════════════════
+🎯 A QUIÉN ENVIAR
+═══════════════════════════════════════════════════════════════════
+
+NEGOCIOS IDEALES:
+✅ Barberías y salones de belleza
+✅ Cafeterías y restaurantes
+✅ Gimnasios y centros deportivos
+✅ Tiendas de ropa local
+✅ Servicios profesionales (abogados, contadores)
+✅ Hoteles y alojamientos
+✅ Emprendimientos en redes sociales
+✅ Artesanos y creadores
+
+CÓMO ENCONTRARLOS:
+1. Google Maps → Busca negocios locales
+2. Instagram → Busca negocios sin web
+3. Facebook → Grupos de emprendedores
+4. Marketplace → Vendedores activos
+5. Cámara de Comercio local
+
+═══════════════════════════════════════════════════════════════════
+📊 ESTRATEGIA DE ENVÍO
+═══════════════════════════════════════════════════════════════════
+
+FASE 1: Investigación (1-2 días)
+- Haz una lista de 20-30 negocios potenciales
+- Anota: Nombre, tipo de negocio, email, teléfono
+- Verifica que NO tengan web o tengan una muy antigua
+
+FASE 2: Personalización (1 día)
+- Personaliza el asunto con el nombre del negocio
+- Si puedes, menciona algo específico en el email
+- Ejemplo: "Vi tu barbería en Instagram y..."
+
+FASE 3: Envío Escalonado
+- NO envíes todos a la vez
+- Envía 5-10 por día máximo
+- Espera respuestas antes de enviar más
+
+FASE 4: Seguimiento
+- Si no responden en 5-7 días, envía seguimiento
+- Usa un asunto diferente: "Re: Propuesta de diseño web"
+- Máximo 2 seguimientos por prospecto
+
+═══════════════════════════════════════════════════════════════════
+💡 TIPS PARA MEJORAR RESPUESTAS
+═══════════════════════════════════════════════════════════════════
+
+1. PERSONALIZACIÓN:
+   ✅ "Hola Carlos, vi UrbanCut en Instagram..."
+   ❌ "Estimado cliente..."
+
+2. TIMING:
+   ✅ Martes-Jueves, 10am-12pm o 2pm-4pm
+   ❌ Lunes temprano, Viernes tarde, fines de semana
+
+3. ASUNTO:
+   ✅ Corto, claro, con valor
+   ❌ Largo, genérico, spam
+
+4. LLAMADO A LA ACCIÓN:
+   ✅ "Responde este email"
+   ✅ "Escríbeme por WhatsApp"
+   ❌ "Visita mi web" (muy indirecto)
+
+5. VALOR PRIMERO:
+   ✅ Muestra cómo les ayudas
+   ❌ Hables solo de ti
+
+═══════════════════════════════════════════════════════════════════
+⚠️ ERRORES COMUNES A EVITAR
+═══════════════════════════════════════════════════════════════════
+
+❌ Enviar a muchas personas a la vez
+❌ No personalizar el mensaje
+❌ Ser muy insistente
+❌ Prometer cosas irreales
+❌ Usar lenguaje muy técnico
+❌ Hacer el email muy largo
+❌ No incluir forma de contacto clara
+❌ Enviar sin revisar ortografía
+
+═══════════════════════════════════════════════════════════════════
+📈 QUÉ ESPERAR
+═══════════════════════════════════════════════════════════════════
+
+TASA DE RESPUESTA NORMAL:
+- 5-10% responden al primer email
+- 2-5% se convierten en clientes
+- De cada 100 emails, espera 5-10 respuestas
+
+FACTORES QUE MEJORAN RESPUESTAS:
+✅ Personalización
+✅ Timing correcto
+✅ Lista bien segmentada
+✅ Oferta clara y atractiva
+✅ Seguimiento educado
+
+═══════════════════════════════════════════════════════════════════
+🔄 VARIACIONES DEL EMAIL
+═══════════════════════════════════════════════════════════════════
+
+VERSIÓN CORTA (Para primera aproximación):
+- Elimina la sección de testimonios
+- Reduce a solo 2 planes (Básico y Estándar)
+- Enfócate en el problema y solución
+
+VERSIÓN PREMIUM (Para negocios grandes):
+- Enfatiza el Plan E-commerce
+- Agrega casos de éxito con números
+- Menciona garantía de satisfacción
+
+VERSIÓN LOCAL (Para negocios de tu zona):
+- Menciona que eres de la misma ciudad
+- Ofrece reunión presencial
+- Destaca conocimiento del mercado local
+
+═══════════════════════════════════════════════════════════════════
+📞 SEGUIMIENTO DESPUÉS DEL EMAIL
+═══════════════════════════════════════════════════════════════════
+
+Si responden con interés:
+1. Responde en menos de 24 horas
+2. Agenda una llamada o videollamada
+3. Envía propuesta formal (email-template.html)
+4. Haz seguimiento cada 2-3 días
+
+Si no responden:
+1. Espera 5-7 días
+2. Envía email de seguimiento corto
+3. Prueba contactar por WhatsApp
+4. Si no hay respuesta, déjalo ir
+
+═══════════════════════════════════════════════════════════════════
+✅ CHECKLIST ANTES DE ENVIAR
+═══════════════════════════════════════════════════════════════════
+
+□ Personalicé mis datos de contacto
+□ Ajusté precios si es necesario
+□ Verifiqué que el email se ve bien
+□ Probé enviándome uno a mí mismo
+□ El asunto es atractivo y claro
+□ Tengo preparada mi respuesta rápida
+□ Es un horario apropiado
+□ La lista de destinatarios está lista
+□ Revisé ortografía y gramática
+
+═══════════════════════════════════════════════════════════════════
+📊 TRACKING Y MEJORA
+═══════════════════════════════════════════════════════════════════
+
+Lleva un registro de:
+- Cuántos emails enviaste
+- Cuántos abrieron (si usas herramienta de tracking)
+- Cuántos respondieron
+- Cuántos se convirtieron en clientes
+
+Prueba diferentes:
+- Asuntos
+- Horarios de envío
+- Ofertas especiales
+- Llamados a la acción
+
+═══════════════════════════════════════════════════════════════════
+🎓 RECURSOS ADICIONALES
+═══════════════════════════════════════════════════════════════════
+
+Para envíos masivos profesionales (opcional):
+- Mailchimp (gratis hasta 500 contactos)
+- Brevo (ex Sendinblue)
+- SendGrid
+
+Para encontrar emails:
+- Hunter.io
+- Google (buscar "email + nombre negocio")
+- Redes sociales del negocio
+
+═══════════════════════════════════════════════════════════════════
+
+¡Éxito con tu campaña de email marketing! 🚀
+
+═══════════════════════════════════════════════════════════════════

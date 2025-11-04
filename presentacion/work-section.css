@@ -93,6 +93,82 @@
     line-height: 1.6;
 }
 
+/* Redesign Section */
+.redesign-section {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 20px;
+    border-left: 5px solid var(--warning);
+}
+
+.redesign-section h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #92400e;
+}
+
+.redesign-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #92400e;
+    margin-bottom: 2.5rem;
+}
+
+.redesign-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.redesign-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.redesign-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.redesign-card i {
+    font-size: 3rem;
+    color: var(--warning);
+    margin-bottom: 1rem;
+}
+
+.redesign-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+}
+
+.redesign-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.redesign-note {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #92400e;
+    line-height: 1.6;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.redesign-note i {
+    color: var(--warning);
+    margin-right: 0.5rem;
+}
+
 /* Hosting Recommendations */
 .hosting-recommendations {
     margin: 4rem 0;
