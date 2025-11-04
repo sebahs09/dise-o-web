@@ -37,16 +37,22 @@ Portafolio profesional de diseñador web freelance especializado en landing page
 
 ```
 diseño-web/
-├── index.html              # Página principal del portafolio
-├── styles.css              # Estilos principales
-├── functional.css          # Estilos de funcionalidades
-├── work-section.css        # Estilos sección "Cómo trabajo"
-├── script.js               # Animaciones y efectos
-├── functional.js           # Lógica de reservas y carrito
-├── email-template.html     # Template de email profesional
-├── GUIA-EMAIL.txt         # Guía de uso del email
-├── EXPLICACION-PLANES.txt # Documentación detallada
-└── README.md              # Este archivo
+└── presentacion/
+    ├── index.html                    # Página principal del portafolio
+    ├── styles.css                    # Estilos principales
+    ├── functional.css                # Estilos de funcionalidades
+    ├── work-section.css              # Estilos sección "Cómo trabajo"
+    ├── script.js                     # Animaciones y efectos
+    ├── functional.js                 # Lógica de reservas y carrito
+    ├── email-template.html           # Template de email profesional
+    ├── email-publicidad.html         # Email de publicidad/marketing
+    ├── GUIA-EMAIL.txt               # Guía de uso del email
+    ├── GUIA-EMAIL-PUBLICIDAD.txt    # Guía del email de marketing
+    ├── MENSAJES-WHATSAPP.txt        # Mensajes para WhatsApp
+    ├── EXPLICACION-PLANES.txt       # Documentación detallada
+    ├── GUIA-GITHUB.txt              # Guía para subir a GitHub
+    ├── COMANDOS-GITHUB.txt          # Comandos rápidos de Git
+    └── README.md                    # Este archivo
 
 ```
 
@@ -61,7 +67,7 @@ Simplemente visita el link de GitHub Pages arriba.
 git clone https://github.com/tu-usuario/diseno-web-portfolio.git
 
 # Entrar al directorio
-cd diseno-web-portfolio
+cd diseno-web-portfolio/presentacion
 
 # Abrir index.html en tu navegador
 ```

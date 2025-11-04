@@ -13,7 +13,7 @@
 ═══════════════════════════════════════════════════════════════════
 
 # 1. Ir a la carpeta del proyecto
-cd "C:\Users\sebas\Desktop\diseño web"
+cd "C:\Users\sebas\Desktop\diseño web\presentacion"
 
 # 2. Verificar que Git está inicializado (debe mostrar archivos)
 git status
@@ -56,7 +56,7 @@ git push
 ✅ EJEMPLO COMPLETO (Copia esto y reemplaza TU-USUARIO)
 ═══════════════════════════════════════════════════════════════════
 
-cd "C:\Users\sebas\Desktop\diseño web"
+cd "C:\Users\sebas\Desktop\diseño web\presentacion"
 git remote add origin https://github.com/TU-USUARIO/diseno-web-portfolio.git
 git branch -M main
 git push -u origin main
