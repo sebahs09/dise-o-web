@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="functional.css">
     <link rel="stylesheet" href="work-section.css">
+    <link rel="stylesheet" href="value-sections.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -32,65 +33,110 @@
         <div class="nav-container">
             <div class="nav-brand">SM</div>
             <ul class="nav-menu">
-                <li><a href="#planes">Planes</a></li>
-                <li><a href="#basico">Plan Básico</a></li>
-                <li><a href="#estandar">Plan Estándar</a></li>
-                <li><a href="#ecommerce">E-commerce</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#ejemplos">Proyectos</a></li>
+                <li><a href="#como-trabajo">Cómo Trabajo</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Planes Overview -->
-    <section class="planes-overview" id="planes">
+    <!-- Propuesta de Valor -->
+    <section class="value-proposition" id="servicios">
         <div class="container">
-            <h2 class="section-title">Planes de Diseño Web</h2>
-            <p class="section-subtitle">Soluciones profesionales adaptadas a tus necesidades</p>
+            <h2 class="section-title">Transforma Tu Negocio con Presencia Digital Profesional</h2>
+            <p class="section-subtitle">Diseño web que genera resultados reales</p>
             
-            <div class="planes-grid">
-                <div class="plan-card" data-plan="basico">
-                    <div class="plan-icon">
-                        <i class="fas fa-file-alt"></i>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
                     </div>
-                    <h3>Plan Básico</h3>
-                    <p class="plan-type">Landing Page</p>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Página única optimizada</li>
-                        <li><i class="fas fa-check"></i> Diseño responsive</li>
-                        <li><i class="fas fa-check"></i> Hasta 5 secciones</li>
-                        <li><i class="fas fa-check"></i> Formulario de contacto</li>
-                    </ul>
-                    <a href="#basico" class="btn-plan">Ver Ejemplo</a>
+                    <h3>Rápido y Eficiente</h3>
+                    <p>Tu sitio web listo en días, no meses. Proceso ágil sin complicaciones.</p>
                 </div>
 
-                <div class="plan-card" data-plan="estandar">
-                    <div class="plan-icon">
-                        <i class="fas fa-layer-group"></i>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
                     </div>
-                    <h3>Plan Estándar</h3>
-                    <p class="plan-type">Sitio Web Completo</p>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Hasta 8 páginas</li>
-                        <li><i class="fas fa-check"></i> Diseño responsive</li>
-                        <li><i class="fas fa-check"></i> Galería de imágenes</li>
+                    <h3>Diseño Premium</h3>
+                    <p>Sitios web que impresionan y generan confianza en tus clientes.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>100% Responsive</h3>
+                    <p>Perfecto en móviles, tablets y computadoras. Donde estén tus clientes.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Resultados Medibles</h3>
+                    <p>Diseño enfocado en conversión y crecimiento de tu negocio.</p>
+                </div>
+            </div>
+
+            <div class="cta-section-inline">
+                <h3>¿Listo para llevar tu negocio al siguiente nivel?</h3>
+                <p>Descubre cómo puedo ayudarte con ejemplos reales</p>
+                <a href="#ejemplos" class="btn-primary">Ver Proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejemplos de Trabajo -->
+    <section class="examples-intro" id="ejemplos">
+        <div class="container">
+            <h2 class="section-title">Proyectos que Hablan por Sí Mismos</h2>
+            <p class="section-subtitle">Explora ejemplos reales de sitios web profesionales</p>
+            
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Landing Page Profesional</h3>
+                    <p>Ideal para servicios locales, profesionales independientes y pequeños negocios</p>
+                    <ul class="example-features">
+                        <li><i class="fas fa-check"></i> Diseño impactante</li>
+                        <li><i class="fas fa-check"></i> Sistema de reservas</li>
+                        <li><i class="fas fa-check"></i> Formularios funcionales</li>
+                    </ul>
+                    <a href="#basico" class="btn-example">Ver Ejemplo</a>
+                </div>
+
+                <div class="example-card featured">
+                    <div class="featured-badge-new">Más Solicitado</div>
+                    <div class="example-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Sitio Web Completo</h3>
+                    <p>Perfecto para empresas, hoteles, restaurantes y servicios profesionales</p>
+                    <ul class="example-features">
+                        <li><i class="fas fa-check"></i> Múltiples páginas</li>
+                        <li><i class="fas fa-check"></i> Galería avanzada</li>
                         <li><i class="fas fa-check"></i> Sistema de reservas</li>
                     </ul>
-                    <a href="#estandar" class="btn-plan">Ver Ejemplo</a>
+                    <a href="#estandar" class="btn-example">Ver Ejemplo</a>
                 </div>
 
-                <div class="plan-card" data-plan="ecommerce">
-                    <div class="plan-icon">
-                        <i class="fas fa-shopping-cart"></i>
+                <div class="example-card">
+                    <div class="example-icon">
+                        <i class="fas fa-shopping-bag"></i>
                     </div>
-                    <h3>Plan E-commerce</h3>
-                    <p class="plan-type">Tienda Online</p>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Catálogo de productos</li>
-                        <li><i class="fas fa-check"></i> Carrito de compras</li>
+                    <h3>Tienda Online</h3>
+                    <p>Para emprendedores que quieren vender sus productos 24/7</p>
+                    <ul class="example-features">
+                        <li><i class="fas fa-check"></i> Carrito funcional</li>
+                        <li><i class="fas fa-check"></i> Catálogo completo</li>
                         <li><i class="fas fa-check"></i> Sistema de categorías</li>
-                        <li><i class="fas fa-check"></i> Diseño responsive</li>
                     </ul>
-                    <a href="#ecommerce" class="btn-plan">Ver Ejemplo</a>
+                    <a href="#ecommerce" class="btn-example">Ver Ejemplo</a>
                 </div>
             </div>
         </div>
@@ -556,29 +602,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contacto">
-        <div class="container">
-            <h2 class="section-title">¿Listo para tu proyecto?</h2>
-            <p class="section-subtitle">Diseño total entregado • Archivos finales en formato .rar</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>contacto@sebastianmartinez.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+54 9 11 1234-5678</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                </div>
-            </div>
-            <a href="#contacto" class="btn-primary large">Solicitar Cotización</a>
-        </div>
-    </section>
-
     <!-- Cómo Trabajo Section -->
     <section class="how-i-work-section" id="como-trabajo">
         <div class="container">
@@ -738,6 +761,30 @@
                     <strong>¿Por qué?</strong> Para darte <strong>libertad total</strong> y evitar costos recurrentes. Tú eliges tu proveedor y tienes control completo de tu sitio.
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title">¿Listo para tu proyecto?</h2>
+            <p class="section-subtitle">Conversemos sobre cómo puedo ayudarte</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contacto@sebastianmartinez.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+54 9 11 1234-5678</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </div>
+            </div>
+            <a href="mailto:contacto@sebastianmartinez.com" class="btn-primary large">Solicitar Consulta Gratuita</a>
+            <p class="contact-note">Diseño total entregado • Archivos finales en formato .rar • Sin costos ocultos</p>
         </div>
     </section>
 
