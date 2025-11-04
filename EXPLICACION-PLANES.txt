@@ -1,0 +1,447 @@
+═══════════════════════════════════════════════════════════════════
+    EXPLICACIÓN DETALLADA DE PLANES DE DISEÑO WEB
+    Sebastián Martínez - Diseñador Web Freelance
+═══════════════════════════════════════════════════════════════════
+
+📋 ÍNDICE:
+1. Plan Básico - Landing Page
+2. Plan Estándar - Sitio Web Completo
+3. Plan E-commerce - Tienda Online
+4. Comparación de Planes
+5. Preguntas Frecuentes
+6. Proceso de Trabajo
+
+═══════════════════════════════════════════════════════════════════
+🌟 PLAN BÁSICO - LANDING PAGE PROFESIONAL
+═══════════════════════════════════════════════════════════════════
+
+💰 PRECIO: $299
+
+📌 ¿QUÉ ES UNA LANDING PAGE?
+Una landing page (página de aterrizaje) es una página web única diseñada
+con un objetivo específico: convertir visitantes en clientes. Es perfecta
+para promocionar un servicio, producto o evento específico.
+
+👥 IDEAL PARA:
+- Emprendedores que están comenzando
+- Profesionales independientes (abogados, contadores, coaches)
+- Pequeños negocios locales (barberías, salones, cafeterías)
+- Freelancers que necesitan portafolio
+- Eventos o lanzamientos específicos
+
+✅ QUÉ INCLUYE:
+
+1. PÁGINA ÚNICA OPTIMIZADA
+   - Una sola página con scroll vertical
+   - Diseño moderno y profesional
+   - Carga rápida (menos de 3 segundos)
+
+2. HASTA 5 SECCIONES:
+   a) Hero/Inicio: Imagen impactante + título + llamado a la acción
+   b) Servicios: 3-4 servicios principales con íconos
+   c) Sobre Nosotros: Quién eres y qué haces
+   d) Galería/Portafolio: 4-8 imágenes de tu trabajo
+   e) Contacto: Formulario + datos de contacto
+
+3. DISEÑO 100% RESPONSIVE
+   - Se adapta perfectamente a móviles (smartphones)
+   - Se ve bien en tablets
+   - Optimizado para computadoras de escritorio
+
+4. FORMULARIO DE CONTACTO
+   - Campos personalizables (nombre, email, teléfono, mensaje)
+   - Validación de datos
+   - Diseño integrado al estilo de la página
+
+5. OPTIMIZACIÓN
+   - Código limpio y comentado
+   - Imágenes optimizadas para web
+   - Velocidad de carga optimizada
+   - Compatible con todos los navegadores
+
+📦 ARCHIVOS QUE RECIBES:
+- index.html (archivo principal)
+- styles.css (estilos de diseño)
+- script.js (interactividad, si aplica)
+- Carpeta /images con todas las imágenes optimizadas
+- Carpeta /fonts con tipografías (si aplica)
+- README.txt con instrucciones de uso
+- Todo comprimido en formato .rar
+
+⏱️ TIEMPO DE ENTREGA: 5-7 días hábiles
+
+🔄 REVISIONES: 2 rondas de cambios incluidas
+
+💡 EJEMPLO REAL:
+Ver "UrbanCut Barber Shop" en el portafolio - página elegante con
+secciones de servicios, galería y formulario de reservas.
+
+❌ NO INCLUYE:
+- Hosting (dónde se aloja la página)
+- Dominio (www.tunegocio.com)
+- Mantenimiento posterior
+- Integración con pasarelas de pago
+- Base de datos
+
+═══════════════════════════════════════════════════════════════════
+🏢 PLAN ESTÁNDAR - SITIO WEB COMPLETO
+═══════════════════════════════════════════════════════════════════
+
+💰 PRECIO: $699
+
+📌 ¿QUÉ ES UN SITIO WEB COMPLETO?
+Un sitio web multi-página con navegación completa, múltiples secciones
+y funcionalidades avanzadas. Ideal para empresas que necesitan mostrar
+información detallada sobre sus servicios, productos o empresa.
+
+👥 IDEAL PARA:
+- Empresas establecidas
+- Hoteles y alojamientos turísticos
+- Restaurantes y cafeterías
+- Servicios profesionales (clínicas, estudios legales)
+- Instituciones educativas
+- Agencias y consultorías
+
+✅ QUÉ INCLUYE:
+
+1. HASTA 8 PÁGINAS COMPLETAS:
+   a) Inicio/Home: Presentación general del negocio
+   b) Servicios: Detalle de cada servicio ofrecido
+   c) Sobre Nosotros: Historia, misión, visión, equipo
+   d) Portafolio/Trabajos: Proyectos realizados
+   e) Galería: Fotos del local, equipo, productos
+   f) Blog/Noticias: Sección de artículos (opcional)
+   g) Preguntas Frecuentes: Respuestas a dudas comunes
+   h) Contacto: Múltiples formas de contacto
+
+2. MENÚ DE NAVEGACIÓN PROFESIONAL
+   - Menú sticky (se queda fijo al hacer scroll)
+   - Submenús desplegables
+   - Versión móvil hamburguesa
+   - Indicador de página activa
+
+3. SISTEMA DE RESERVAS FUNCIONAL
+   - Calendario interactivo
+   - Selección de fecha y hora
+   - Formulario de datos del cliente
+   - Confirmación visual
+   - Cálculo automático (para hoteles: noches, precio total)
+
+4. GALERÍA DE IMÁGENES INTERACTIVA
+   - Lightbox (ver imágenes en grande)
+   - Navegación entre imágenes
+   - Categorías de galería
+   - Optimización de carga
+
+5. INTEGRACIÓN GOOGLE MAPS
+   - Mapa embebido con tu ubicación
+   - Indicaciones de cómo llegar
+   - Información de contacto visible
+
+6. INTEGRACIÓN REDES SOCIALES
+   - Enlaces a Facebook, Instagram, Twitter, etc.
+   - Íconos profesionales
+   - Opción de compartir contenido
+
+7. SEO BÁSICO
+   - Títulos optimizados
+   - Meta descripciones
+   - Estructura de encabezados correcta
+   - URLs amigables
+   - Sitemap básico
+
+8. DISEÑO RESPONSIVE COMPLETO
+   - Todas las páginas adaptadas a móviles
+   - Navegación optimizada para touch
+   - Imágenes responsive
+
+📦 ARCHIVOS QUE RECIBES:
+- 8 archivos HTML (uno por página)
+- styles.css (estilos globales)
+- Archivos CSS adicionales si son necesarios
+- script.js con todas las funcionalidades
+- Carpeta /images con imágenes optimizadas
+- Carpeta /fonts con tipografías
+- Carpeta /icons con íconos
+- README.txt con documentación completa
+- INSTRUCCIONES.pdf con guía de uso
+- Todo en formato .rar organizado por carpetas
+
+⏱️ TIEMPO DE ENTREGA: 12-15 días hábiles
+
+🔄 REVISIONES: 3 rondas de cambios incluidas
+
+💡 EJEMPLO REAL:
+Ver "Hotel Serrano Patagonia" en el portafolio - sitio completo con
+múltiples páginas, sistema de reservas con calendario, galería de
+habitaciones y formulario de contacto avanzado.
+
+❌ NO INCLUYE:
+- Hosting y dominio
+- Mantenimiento
+- Panel de administración (CMS)
+- Base de datos backend
+- Integración con sistemas de pago
+- Email marketing
+
+═══════════════════════════════════════════════════════════════════
+🛒 PLAN E-COMMERCE - TIENDA ONLINE COMPLETA
+═══════════════════════════════════════════════════════════════════
+
+💰 PRECIO: $999
+
+📌 ¿QUÉ ES UNA TIENDA ONLINE?
+Un sitio web completo con catálogo de productos, carrito de compras
+y sistema de checkout. Permite a tus clientes ver productos, agregarlos
+al carrito y realizar pedidos online.
+
+👥 IDEAL PARA:
+- Emprendedores que venden productos físicos
+- Tiendas de ropa y accesorios
+- Joyerías y bisutería
+- Productos artesanales
+- Tiendas de decoración
+- Productos digitales
+- Cualquier negocio que venda productos
+
+✅ QUÉ INCLUYE:
+
+1. CATÁLOGO DE PRODUCTOS (hasta 50 productos)
+   - Ficha de producto con:
+     * Imagen principal + galería de imágenes
+     * Nombre del producto
+     * Descripción detallada
+     * Precio
+     * Disponibilidad
+     * Botón "Agregar al Carrito"
+   - Grid de productos responsive
+   - Vista de lista y vista de cuadrícula
+
+2. CARRITO DE COMPRAS FUNCIONAL
+   - Agregar productos al carrito
+   - Ver resumen del carrito
+   - Modificar cantidades
+   - Eliminar productos
+   - Cálculo automático de subtotal
+   - Cálculo de envío
+   - Total actualizado en tiempo real
+   - Badge con cantidad de productos
+   - Persistencia (se mantiene al recargar)
+
+3. SISTEMA DE CATEGORÍAS
+   - Hasta 6 categorías principales
+   - Filtrado por categoría
+   - Navegación entre categorías
+   - Contador de productos por categoría
+
+4. BUSCADOR DE PRODUCTOS
+   - Búsqueda por nombre
+   - Búsqueda por descripción
+   - Resultados en tiempo real
+   - Sin resultados: mensaje amigable
+
+5. PÁGINA DE CHECKOUT
+   - Formulario de datos del cliente:
+     * Nombre completo
+     * Email
+     * Teléfono
+     * Dirección de envío
+   - Resumen del pedido
+   - Cálculo de envío según monto
+   - Total final
+   - Botón de confirmación
+
+6. SISTEMA DE RESEÑAS
+   - Calificación con estrellas (1-5)
+   - Comentarios de clientes
+   - Promedio de calificación
+   - Contador de reseñas
+
+7. LISTA DE DESEOS
+   - Guardar productos favoritos
+   - Agregar/quitar de favoritos
+   - Ver lista completa
+   - Mover de favoritos al carrito
+
+8. PÁGINAS ADICIONALES
+   - Inicio con productos destacados
+   - Página de producto individual
+   - Página de categoría
+   - Página del carrito
+   - Página de checkout
+   - Página "Sobre Nosotros"
+   - Página de contacto
+   - Políticas de envío y devoluciones
+
+9. NEWSLETTER
+   - Formulario de suscripción
+   - Validación de email
+   - Diseño integrado
+   - Ubicación estratégica (footer)
+
+10. DISEÑO RESPONSIVE
+    - Optimizado para compras móviles
+    - Carrito accesible en móvil
+    - Checkout simplificado para móvil
+    - Imágenes de productos optimizadas
+
+📦 ARCHIVOS QUE RECIBES:
+- Múltiples archivos HTML organizados
+- styles.css con diseño de tienda completo
+- shop.js con lógica del carrito
+- products.js con base de datos de productos
+- Carpeta /images con imágenes de productos
+- Carpeta /icons con íconos de la tienda
+- products.json con estructura de productos
+- MANUAL-ADMINISTRADOR.pdf
+- VIDEO-TUTORIAL.mp4 (cómo agregar productos)
+- README.txt con instrucciones
+- Todo en .rar organizado
+
+⏱️ TIEMPO DE ENTREGA: 18-21 días hábiles
+
+🔄 REVISIONES: 3 rondas de cambios incluidas
+
+💡 EJEMPLO REAL:
+Ver "Luna Accesorios" en el portafolio - tienda completa con carrito
+funcional, categorías, sistema de productos y checkout profesional.
+
+❌ NO INCLUYE:
+- Hosting y dominio
+- Pasarela de pago real (MercadoPago, PayPal, etc.)
+- Panel de administración backend
+- Base de datos real (usa JSON local)
+- Gestión de inventario automática
+- Envío de emails automáticos
+- Integración con sistemas de envío
+
+⚠️ NOTA IMPORTANTE:
+Este plan entrega el FRONTEND (la parte visual y funcional que ve el
+cliente). Para procesar pagos reales necesitarás:
+1. Contratar hosting
+2. Integrar una pasarela de pago
+3. Configurar un backend (puede ser adicional)
+
+═══════════════════════════════════════════════════════════════════
+📊 COMPARACIÓN DE PLANES
+═══════════════════════════════════════════════════════════════════
+
+CARACTERÍSTICA          | BÁSICO  | ESTÁNDAR | E-COMMERCE
+------------------------|---------|----------|------------
+Precio                  | $299    | $699     | $999
+Páginas                 | 1       | 8        | 10+
+Diseño Responsive       | ✅      | ✅       | ✅
+Formulario Contacto     | ✅      | ✅       | ✅
+Sistema de Reservas     | ❌      | ✅       | ❌
+Galería de Imágenes     | Básica  | Avanzada | Productos
+Menú de Navegación      | Simple  | Completo | Completo
+Google Maps             | ❌      | ✅       | ✅
+SEO Básico              | ❌      | ✅       | ✅
+Catálogo de Productos   | ❌      | ❌       | ✅ (50)
+Carrito de Compras      | ❌      | ❌       | ✅
+Sistema de Categorías   | ❌      | ❌       | ✅
+Buscador                | ❌      | ❌       | ✅
+Checkout                | ❌      | ❌       | ✅
+Tiempo de Entrega       | 5-7 días| 12-15 días| 18-21 días
+Rondas de Cambios       | 2       | 3        | 3
+Soporte Post-Entrega    | 30 días | 30 días  | 30 días
+
+═══════════════════════════════════════════════════════════════════
+❓ PREGUNTAS FRECUENTES
+═══════════════════════════════════════════════════════════════════
+
+P: ¿Incluye hosting y dominio?
+R: No. Te entrego los archivos finales y tú eliges dónde alojarlos.
+   Puedo recomendarte proveedores de hosting económicos.
+
+P: ¿Puedo subir los archivos yo mismo?
+R: Sí, son archivos estándar HTML/CSS/JS que puedes subir a cualquier
+   hosting mediante FTP o panel de control.
+
+P: ¿Qué pasa si necesito más páginas?
+R: Puedo agregar páginas adicionales por $50-$80 cada una, dependiendo
+   de la complejidad.
+
+P: ¿Incluye el contenido (textos e imágenes)?
+R: Tú debes proporcionar los textos e imágenes. Yo me encargo del
+   diseño y maquetación. Si necesitas ayuda con textos, puedo
+   recomendarte un copywriter.
+
+P: ¿Puedo hacer cambios después de la entrega?
+R: Durante 30 días post-entrega ofrezco soporte para dudas y pequeños
+   ajustes. Cambios mayores tienen costo adicional.
+
+P: ¿Los formularios envían emails?
+R: Los formularios están diseñados, pero necesitan configuración en
+   el servidor. Puedo ayudarte con esto por un costo adicional de $30.
+
+P: ¿Funciona en todos los navegadores?
+R: Sí, está probado en Chrome, Firefox, Safari, Edge y versiones móviles.
+
+P: ¿Puedo agregar un blog después?
+R: Sí, puedo agregar funcionalidad de blog por $150-$200 adicionales.
+
+P: ¿Incluye certificado SSL (https)?
+R: El certificado SSL lo proporciona tu hosting. La mayoría de hostings
+   modernos lo incluyen gratis.
+
+P: ¿Qué necesito para empezar?
+R: - Logo de tu negocio (si tienes)
+   - Textos de cada sección
+   - Imágenes (fotos de productos, local, equipo)
+   - Colores de tu marca (si tienes)
+   - Ejemplos de sitios que te gusten
+
+═══════════════════════════════════════════════════════════════════
+🔄 PROCESO DE TRABAJO
+═══════════════════════════════════════════════════════════════════
+
+PASO 1: CONSULTA INICIAL (1-2 días)
+- Conversamos sobre tu negocio y objetivos
+- Defines qué plan necesitas
+- Envías contenido (textos, imágenes, logo)
+- Acordamos colores y estilo
+- Firmas contrato y pagas 50% de anticipo
+
+PASO 2: DISEÑO Y DESARROLLO
+- Creo el diseño según lo acordado
+- Te envío avances para feedback
+- Implemento funcionalidades
+- Optimizo para móviles
+
+PASO 3: REVISIÓN
+- Te envío el sitio completo para revisión
+- Haces lista de cambios necesarios
+- Implemento los cambios
+- Segunda ronda de revisión si es necesaria
+
+PASO 4: ENTREGA FINAL
+- Pagas el 50% restante
+- Recibes todos los archivos en .rar
+- Te explico cómo usar los archivos
+- Queda disponible soporte por 30 días
+
+═══════════════════════════════════════════════════════════════════
+💳 FORMAS DE PAGO
+═══════════════════════════════════════════════════════════════════
+
+- Transferencia bancaria
+- MercadoPago
+- PayPal
+- Efectivo (si eres de la zona)
+
+MODALIDAD: 50% anticipo + 50% contra entrega
+
+═══════════════════════════════════════════════════════════════════
+📞 CONTACTO
+═══════════════════════════════════════════════════════════════════
+
+📧 Email: contacto@sebastianmartinez.com
+📱 WhatsApp: +54 9 11 1234-5678
+🌐 Portafolio: www.sebastianmartinez.com
+
+═══════════════════════════════════════════════════════════════════
+
+Última actualización: Noviembre 2024
+
+═══════════════════════════════════════════════════════════════════

@@ -1,0 +1,212 @@
+═══════════════════════════════════════════════════════════════════
+    GUÍA DE USO - TEMPLATE DE EMAIL PROFESIONAL
+    Optimizado para no caer en SPAM
+═══════════════════════════════════════════════════════════════════
+
+📧 ARCHIVO: email-template.html
+
+═══════════════════════════════════════════════════════════════════
+✅ CARACTERÍSTICAS ANTI-SPAM
+═══════════════════════════════════════════════════════════════════
+
+1. ✅ Usa tablas HTML (formato estándar de emails)
+2. ✅ Estilos inline (no CSS externo)
+3. ✅ Sin JavaScript
+4. ✅ Sin imágenes externas (solo texto y colores)
+5. ✅ Texto plano legible sin HTML
+6. ✅ Sin palabras spam ("gratis", "oferta limitada", etc.)
+7. ✅ Estructura profesional y clara
+8. ✅ Ancho máximo 600px (estándar de email)
+9. ✅ Colores profesionales y moderados
+10. ✅ Sin enlaces sospechosos
+
+═══════════════════════════════════════════════════════════════════
+📝 CÓMO PERSONALIZAR EL EMAIL
+═══════════════════════════════════════════════════════════════════
+
+1. NOMBRE DEL CLIENTE:
+   Busca: [NOMBRE DEL CLIENTE]
+   Reemplaza con el nombre real del cliente
+
+2. TUS DATOS DE CONTACTO:
+   Busca estas líneas en el footer:
+   - contacto@sebastianmartinez.com → Tu email real
+   - +54 9 11 1234-5678 → Tu teléfono real
+   - Enlaces de redes sociales → Tus perfiles reales
+
+3. PRECIOS (si quieres ajustarlos):
+   - Plan Básico: Busca "$299"
+   - Plan Estándar: Busca "$699"
+   - Plan E-commerce: Busca "$999"
+
+4. TIEMPOS DE ENTREGA (si quieres ajustarlos):
+   - Plan Básico: "5-7 días hábiles"
+   - Plan Estándar: "12-15 días hábiles"
+   - Plan E-commerce: "18-21 días hábiles"
+
+═══════════════════════════════════════════════════════════════════
+📤 CÓMO ENVIAR EL EMAIL
+═══════════════════════════════════════════════════════════════════
+
+OPCIÓN 1 - Gmail (Recomendado):
+1. Abre Gmail
+2. Clic en "Redactar"
+3. Clic en los tres puntos (⋮) abajo a la derecha
+4. Selecciona "Modo de texto enriquecido"
+5. Copia TODO el contenido de email-template.html
+6. Pégalo en el email
+7. Personaliza [NOMBRE DEL CLIENTE]
+8. Asunto sugerido: "Propuesta de Diseño Web - [Nombre del Proyecto]"
+9. Enviar
+
+OPCIÓN 2 - Outlook:
+1. Abre Outlook
+2. Nuevo mensaje
+3. Clic en "Formato de texto" → "HTML"
+4. Copia el contenido de email-template.html
+5. Pégalo en el mensaje
+6. Personaliza los datos
+7. Enviar
+
+OPCIÓN 3 - Cualquier cliente de email:
+1. Abre el archivo email-template.html en tu navegador
+2. Copia todo visualmente (Ctrl+A, Ctrl+C)
+3. Pega en tu cliente de email
+4. Personaliza y envía
+
+═══════════════════════════════════════════════════════════════════
+⚠️ CONSEJOS PARA EVITAR SPAM
+═══════════════════════════════════════════════════════════════════
+
+1. ASUNTO DEL EMAIL:
+   ✅ BIEN: "Propuesta de Diseño Web - Tu Proyecto"
+   ✅ BIEN: "Planes de Diseño Web Profesional"
+   ❌ MAL: "¡OFERTA! Diseño Web GRATIS"
+   ❌ MAL: "$$$ Gana Dinero Rápido $$$"
+
+2. REMITENTE:
+   ✅ Usa tu nombre real: "Sebastián Martínez"
+   ✅ Email profesional: nombre@dominio.com
+   ❌ Evita: noreply@, info123@
+
+3. PRIMER ENVÍO:
+   - Envía primero un email de prueba a ti mismo
+   - Verifica que se vea bien en móvil y desktop
+   - Revisa que no caiga en spam
+
+4. FRECUENCIA:
+   - No envíes el mismo email a muchas personas seguidas
+   - Espera al menos 5 minutos entre envíos
+   - Personaliza cada email (al menos el nombre)
+
+5. AUTENTICACIÓN:
+   - Usa un dominio propio si es posible
+   - Configura SPF, DKIM y DMARC (pregunta a tu proveedor)
+
+═══════════════════════════════════════════════════════════════════
+✉️ ASUNTOS SUGERIDOS (Copiar y Pegar)
+═══════════════════════════════════════════════════════════════════
+
+Para primera vez:
+- "Propuesta de Diseño Web - [Nombre Empresa]"
+- "Planes de Diseño Web Profesional"
+- "Soluciones de Diseño Web para [Tipo de Negocio]"
+
+Para seguimiento:
+- "Re: Propuesta de Diseño Web"
+- "Seguimiento - Planes de Diseño Web"
+- "¿Alguna pregunta sobre la propuesta?"
+
+═══════════════════════════════════════════════════════════════════
+📋 CHECKLIST ANTES DE ENVIAR
+═══════════════════════════════════════════════════════════════════
+
+□ Reemplacé [NOMBRE DEL CLIENTE] con el nombre real
+□ Actualicé mis datos de contacto (email, teléfono)
+□ Verifiqué los precios
+□ Revisé los tiempos de entrega
+□ El asunto es profesional y claro
+□ Envié un email de prueba a mí mismo
+□ El email se ve bien en móvil
+□ No hay errores de ortografía
+□ Los enlaces funcionan correctamente
+
+═══════════════════════════════════════════════════════════════════
+🎯 MEJORES PRÁCTICAS
+═══════════════════════════════════════════════════════════════════
+
+1. PERSONALIZACIÓN:
+   - Menciona algo específico del negocio del cliente
+   - Referencia una conversación previa si la hubo
+   - Adapta el tono según el cliente
+
+2. TIMING:
+   - Mejor horario: Martes a Jueves, 10am-12pm o 2pm-4pm
+   - Evita: Lunes temprano, Viernes tarde, fines de semana
+
+3. SEGUIMIENTO:
+   - Si no responde en 3-4 días, envía un seguimiento corto
+   - Máximo 2 seguimientos
+   - Sé breve y cordial
+
+4. RESPUESTA RÁPIDA:
+   - Responde consultas en menos de 24 horas
+   - Ten preparadas respuestas a preguntas frecuentes
+
+═══════════════════════════════════════════════════════════════════
+❓ PREGUNTAS FRECUENTES
+═══════════════════════════════════════════════════════════════════
+
+P: ¿Puedo agregar imágenes?
+R: Sí, pero aumenta el riesgo de spam. Si agregas imágenes:
+   - Usa URLs de imágenes propias (no de terceros)
+   - Mantén el tamaño pequeño (máx 100KB por imagen)
+   - Siempre incluye texto alternativo (alt)
+
+P: ¿Puedo cambiar los colores?
+R: Sí, pero mantén colores profesionales:
+   - Azul: #2563eb (actual)
+   - Verde: #10b981
+   - Púrpura: #8b5cf6
+   Evita: rojo brillante, amarillo neón, etc.
+
+P: ¿Funciona en todos los clientes de email?
+R: Sí, está optimizado para:
+   - Gmail ✅
+   - Outlook ✅
+   - Apple Mail ✅
+   - Yahoo Mail ✅
+   - Móviles ✅
+
+P: ¿Puedo usar este template para envíos masivos?
+R: NO recomendado. Este template es para emails personalizados
+   uno a uno. Para envíos masivos usa servicios como:
+   - Mailchimp
+   - SendGrid
+   - Brevo (ex Sendinblue)
+
+═══════════════════════════════════════════════════════════════════
+📞 SOPORTE
+═══════════════════════════════════════════════════════════════════
+
+Si tienes problemas con el template:
+1. Verifica que copiaste TODO el código HTML
+2. Asegúrate de estar en modo HTML en tu cliente de email
+3. Prueba enviándote un email a ti mismo primero
+
+═══════════════════════════════════════════════════════════════════
+✨ TIPS FINALES
+═══════════════════════════════════════════════════════════════════
+
+1. Siempre personaliza el email con el nombre del cliente
+2. Menciona cómo conociste al cliente o por qué le escribes
+3. Sé claro y directo - el cliente debe entender rápido
+4. Incluye un llamado a la acción claro
+5. Revisa ortografía y gramática antes de enviar
+6. Responde rápido cuando te contacten
+
+═══════════════════════════════════════════════════════════════════
+
+¡Éxito con tus propuestas! 🚀
+
+═══════════════════════════════════════════════════════════════════

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastián Martínez - Diseño Web Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="functional.css">
+    <link rel="stylesheet" href="work-section.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Sebastián Martínez</h1>
+            <p class="hero-subtitle">Diseñador Web Freelance</p>
+            <p class="hero-description">Diseño total entregado • Archivos finales en formato .rar</p>
+            <div class="hero-cta">
+                <a href="#planes" class="btn-primary">Ver Planes</a>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <div class="nav-brand">SM</div>
+            <ul class="nav-menu">
+                <li><a href="#planes">Planes</a></li>
+                <li><a href="#basico">Plan Básico</a></li>
+                <li><a href="#estandar">Plan Estándar</a></li>
+                <li><a href="#ecommerce">E-commerce</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Planes Overview -->
+    <section class="planes-overview" id="planes">
+        <div class="container">
+            <h2 class="section-title">Planes de Diseño Web</h2>
+            <p class="section-subtitle">Soluciones profesionales adaptadas a tus necesidades</p>
+            
+            <div class="planes-grid">
+                <div class="plan-card" data-plan="basico">
+                    <div class="plan-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Plan Básico</h3>
+                    <p class="plan-type">Landing Page</p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Página única optimizada</li>
+                        <li><i class="fas fa-check"></i> Diseño responsive</li>
+                        <li><i class="fas fa-check"></i> Hasta 5 secciones</li>
+                        <li><i class="fas fa-check"></i> Formulario de contacto</li>
+                    </ul>
+                    <a href="#basico" class="btn-plan">Ver Ejemplo</a>
+                </div>
+
+                <div class="plan-card" data-plan="estandar">
+                    <div class="plan-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Plan Estándar</h3>
+                    <p class="plan-type">Sitio Web Completo</p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Hasta 8 páginas</li>
+                        <li><i class="fas fa-check"></i> Diseño responsive</li>
+                        <li><i class="fas fa-check"></i> Galería de imágenes</li>
+                        <li><i class="fas fa-check"></i> Sistema de reservas</li>
+                    </ul>
+                    <a href="#estandar" class="btn-plan">Ver Ejemplo</a>
+                </div>
+
+                <div class="plan-card" data-plan="ecommerce">
+                    <div class="plan-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Plan E-commerce</h3>
+                    <p class="plan-type">Tienda Online</p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Catálogo de productos</li>
+                        <li><i class="fas fa-check"></i> Carrito de compras</li>
+                        <li><i class="fas fa-check"></i> Sistema de categorías</li>
+                        <li><i class="fas fa-check"></i> Diseño responsive</li>
+                    </ul>
+                    <a href="#ecommerce" class="btn-plan">Ver Ejemplo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Básico - UrbanCut Barber Shop -->
+    <section class="showcase-section" id="basico">
+        <div class="container">
+            <div class="showcase-header">
+                <span class="showcase-badge">Plan Básico</span>
+                <h2>UrbanCut Barber Shop</h2>
+                <p>Landing Page Profesional</p>
+            </div>
+
+            <div class="mockup-container">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-url">urbancut-barbershop.com</div>
+                    </div>
+                    <div class="browser-content barber-theme">
+                        <!-- Hero Section -->
+                        <div class="demo-hero barber-hero">
+                            <div class="demo-overlay"></div>
+                            <div class="demo-hero-content">
+                                <h1 class="demo-title">URBANCUT</h1>
+                                <p class="demo-subtitle">Barbería de Estilo Clásico</p>
+                                <button class="demo-btn gold-btn">Reservar Turno</button>
+                            </div>
+                        </div>
+
+                        <!-- Services Section -->
+                        <div class="demo-section dark-section">
+                            <h2 class="demo-section-title gold-text">Nuestros Servicios</h2>
+                            <div class="services-grid">
+                                <div class="service-card">
+                                    <i class="fas fa-cut service-icon gold-text"></i>
+                                    <h3>Corte Premium</h3>
+                                    <p>Estilo personalizado con acabado profesional</p>
+                                    <span class="price">$25</span>
+                                </div>
+                                <div class="service-card">
+                                    <i class="fas fa-user-tie service-icon gold-text"></i>
+                                    <h3>Barba & Bigote</h3>
+                                    <p>Perfilado y cuidado especializado</p>
+                                    <span class="price">$18</span>
+                                </div>
+                                <div class="service-card">
+                                    <i class="fas fa-spa service-icon gold-text"></i>
+                                    <h3>Afeitado Premium</h3>
+                                    <p>Experiencia clásica con toalla caliente</p>
+                                    <span class="price">$30</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Section -->
+                        <div class="demo-section">
+                            <h2 class="demo-section-title">Galería</h2>
+                            <div class="gallery-grid">
+                                <div class="gallery-item barber-img-1"></div>
+                                <div class="gallery-item barber-img-2"></div>
+                                <div class="gallery-item barber-img-3"></div>
+                                <div class="gallery-item barber-img-4"></div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Section -->
+                        <div class="demo-section dark-section cta-section">
+                            <h2 class="gold-text">¿Listo para tu nuevo look?</h2>
+                            <button class="demo-btn gold-btn large-btn">Reservar Ahora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-features">
+                <div class="feature-item">
+                    <i class="fas fa-palette"></i>
+                    <h4>Colores</h4>
+                    <p>Negro, Gris Oscuro, Dorado</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-th-large"></i>
+                    <h4>Secciones</h4>
+                    <p>Hero, Servicios, Galería, CTA</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Responsive</h4>
+                    <p>Adaptado a todos los dispositivos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Estándar - Hotel Serrano Patagonia -->
+    <section class="showcase-section alt-bg" id="estandar">
+        <div class="container">
+            <div class="showcase-header">
+                <span class="showcase-badge featured-badge">Plan Estándar</span>
+                <h2>Hotel Serrano Patagonia</h2>
+                <p>Sitio Web Completo Multi-página</p>
+            </div>
+
+            <div class="mockup-container">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-url">hotelserranopatagonia.com</div>
+                    </div>
+                    <div class="browser-content hotel-theme">
+                        <!-- Navigation -->
+                        <nav class="demo-nav hotel-nav">
+                            <div class="demo-nav-brand">Hotel Serrano</div>
+                            <ul class="demo-nav-menu">
+                                <li>Inicio</li>
+                                <li>Habitaciones</li>
+                                <li>Servicios</li>
+                                <li>Galería</li>
+                                <li>Contacto</li>
+                            </ul>
+                        </nav>
+
+                        <!-- Hero Section -->
+                        <div class="demo-hero hotel-hero">
+                            <div class="demo-overlay light-overlay"></div>
+                            <div class="demo-hero-content">
+                                <h1 class="demo-title white-text">Bienvenido a la Patagonia</h1>
+                                <p class="demo-subtitle white-text">Experiencia única en el corazón de la naturaleza</p>
+                                <button class="demo-btn blue-btn">Ver Habitaciones</button>
+                            </div>
+                        </div>
+
+                        <!-- Rooms Section -->
+                        <div class="demo-section light-section">
+                            <h2 class="demo-section-title blue-text">Nuestras Habitaciones</h2>
+                            <div class="rooms-grid">
+                                <div class="room-card">
+                                    <div class="room-image hotel-room-1"></div>
+                                    <div class="room-info">
+                                        <h3>Suite Deluxe</h3>
+                                        <p>Vista panorámica a las montañas</p>
+                                        <div class="room-price">
+                                            <span class="price-amount">$120</span>
+                                            <span class="price-period">/noche</span>
+                                        </div>
+                                        <button class="demo-btn-small blue-btn">Reservar</button>
+                                    </div>
+                                </div>
+                                <div class="room-card">
+                                    <div class="room-image hotel-room-2"></div>
+                                    <div class="room-info">
+                                        <h3>Habitación Doble</h3>
+                                        <p>Confort y elegancia</p>
+                                        <div class="room-price">
+                                            <span class="price-amount">$85</span>
+                                            <span class="price-period">/noche</span>
+                                        </div>
+                                        <button class="demo-btn-small blue-btn">Reservar</button>
+                                    </div>
+                                </div>
+                                <div class="room-card">
+                                    <div class="room-image hotel-room-3"></div>
+                                    <div class="room-info">
+                                        <h3>Cabaña Familiar</h3>
+                                        <p>Espacio y privacidad</p>
+                                        <div class="room-price">
+                                            <span class="price-amount">$150</span>
+                                            <span class="price-period">/noche</span>
+                                        </div>
+                                        <button class="demo-btn-small blue-btn">Reservar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Services Section -->
+                        <div class="demo-section beige-section">
+                            <h2 class="demo-section-title">Servicios Incluidos</h2>
+                            <div class="amenities-grid">
+                                <div class="amenity-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>WiFi Gratis</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-coffee"></i>
+                                    <span>Desayuno</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-swimming-pool"></i>
+                                    <span>Piscina</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-parking"></i>
+                                    <span>Estacionamiento</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-spa"></i>
+                                    <span>Spa</span>
+                                </div>
+                                <div class="amenity-item">
+                                    <i class="fas fa-concierge-bell"></i>
+                                    <span>Recepción 24h</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Booking Form -->
+                        <div class="demo-section light-section">
+                            <h2 class="demo-section-title blue-text">Reserva tu Estadía</h2>
+                            <div class="booking-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Check-in</label>
+                                        <input type="text" placeholder="Fecha de entrada">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Check-out</label>
+                                        <input type="text" placeholder="Fecha de salida">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Huéspedes</label>
+                                        <input type="text" placeholder="Número de personas">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Habitación</label>
+                                        <input type="text" placeholder="Tipo de habitación">
+                                    </div>
+                                </div>
+                                <button class="demo-btn blue-btn full-width">Consultar Disponibilidad</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-features">
+                <div class="feature-item">
+                    <i class="fas fa-palette"></i>
+                    <h4>Colores</h4>
+                    <p>Azul Marino, Blanco, Beige</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-sitemap"></i>
+                    <h4>Páginas</h4>
+                    <p>8 páginas completas</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <h4>Funcionalidades</h4>
+                    <p>Sistema de reservas integrado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan E-commerce - Luna Accesorios -->
+    <section class="showcase-section" id="ecommerce">
+        <div class="container">
+            <div class="showcase-header">
+                <span class="showcase-badge">Plan E-commerce</span>
+                <h2>Luna Accesorios</h2>
+                <p>Tienda Online Completa</p>
+            </div>
+
+            <div class="mockup-container">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-url">lunaaccesorios.com</div>
+                    </div>
+                    <div class="browser-content shop-theme">
+                        <!-- Header -->
+                        <header class="demo-header shop-header">
+                            <div class="shop-top-bar">
+                                <span>Envío gratis en compras mayores a $50</span>
+                            </div>
+                            <nav class="demo-nav shop-nav">
+                                <div class="demo-nav-brand">Luna Accesorios</div>
+                                <ul class="demo-nav-menu">
+                                    <li>Collares</li>
+                                    <li>Aros</li>
+                                    <li>Pulseras</li>
+                                    <li>Anillos</li>
+                                </ul>
+                                <div class="shop-icons">
+                                    <i class="fas fa-search"></i>
+                                    <i class="fas fa-user"></i>
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                            </nav>
+                        </header>
+
+                        <!-- Banner -->
+                        <div class="shop-banner">
+                            <div class="banner-content">
+                                <h2>Nueva Colección Primavera</h2>
+                                <p>Descubre las últimas tendencias</p>
+                                <button class="demo-btn pink-btn">Comprar Ahora</button>
+                            </div>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="demo-section white-section">
+                            <div class="categories-bar">
+                                <button class="category-btn active">Todos</button>
+                                <button class="category-btn">Collares</button>
+                                <button class="category-btn">Aros</button>
+                                <button class="category-btn">Pulseras</button>
+                                <button class="category-btn">Anillos</button>
+                            </div>
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="demo-section light-section">
+                            <div class="products-grid">
+                                <div class="product-card">
+                                    <div class="product-image shop-product-1">
+                                        <div class="product-badge">Nuevo</div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3>Collar Luna Creciente</h3>
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-price">$28.99</div>
+                                        <button class="demo-btn-small pink-btn full-width">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="product-card">
+                                    <div class="product-image shop-product-2">
+                                        <div class="product-badge sale">-20%</div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3>Aros Perla Elegante</h3>
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="old-price">$35.00</span>
+                                            <span class="new-price">$28.00</span>
+                                        </div>
+                                        <button class="demo-btn-small pink-btn full-width">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="product-card">
+                                    <div class="product-image shop-product-3"></div>
+                                    <div class="product-info">
+                                        <h3>Pulsera Cristal Rosa</h3>
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-price">$22.50</div>
+                                        <button class="demo-btn-small pink-btn full-width">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="product-card">
+                                    <div class="product-image shop-product-4">
+                                        <div class="product-badge">Nuevo</div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3>Anillo Minimalista</h3>
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <div class="product-price">$18.99</div>
+                                        <button class="demo-btn-small pink-btn full-width">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="product-card">
+                                    <div class="product-image shop-product-5"></div>
+                                    <div class="product-info">
+                                        <h3>Collar Corazón Dorado</h3>
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-price">$32.00</div>
+                                        <button class="demo-btn-small pink-btn full-width">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+
+                                <div class="product-card">
+                                    <div class="product-image shop-product-6"></div>
+                                    <div class="product-info">
+                                        <h3>Set Aros Múltiples</h3>
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-price">$24.99</div>
+                                        <button class="demo-btn-small pink-btn full-width">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Newsletter -->
+                        <div class="demo-section pink-section">
+                            <h2 class="white-text">Suscríbete a Nuestro Newsletter</h2>
+                            <p class="white-text">Recibe ofertas exclusivas y novedades</p>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Tu correo electrónico">
+                                <button class="demo-btn white-btn">Suscribirse</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-features">
+                <div class="feature-item">
+                    <i class="fas fa-palette"></i>
+                    <h4>Colores</h4>
+                    <p>Rosa Pastel, Blanco, Gris Suave</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h4>E-commerce</h4>
+                    <p>Catálogo completo con carrito</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tags"></i>
+                    <h4>Categorías</h4>
+                    <p>Sistema de filtrado avanzado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title">¿Listo para tu proyecto?</h2>
+            <p class="section-subtitle">Diseño total entregado • Archivos finales en formato .rar</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contacto@sebastianmartinez.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+54 9 11 1234-5678</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </div>
+            </div>
+            <button class="btn-primary large">Solicitar Cotización</button>
+        </div>
+    </section>
+
+    <!-- Cómo Trabajo Section -->
+    <section class="how-i-work-section" id="como-trabajo">
+        <div class="container">
+            <h2 class="section-title">¿Cómo Trabajo?</h2>
+            <p class="section-subtitle">Proceso transparente y profesional</p>
+
+            <div class="work-process">
+                <div class="process-card">
+                    <div class="process-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3>Solo Archivos</h3>
+                    <p>Te entrego el <strong>diseño completo</strong> en archivos HTML, CSS y JavaScript listos para usar. Tú decides dónde y cómo alojarlos.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Entrega en .rar</h3>
+                    <p>Recibes todo <strong>organizado y comprimido</strong> en formato .rar: código, imágenes, fuentes y documentación completa.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Libertad Total</h3>
+                    <p>Los archivos son <strong>100% tuyos</strong>. Sin dependencias, sin suscripciones, sin ataduras. Úsalos donde quieras.</p>
+                </div>
+            </div>
+
+            <div class="what-includes">
+                <h3><i class="fas fa-gift"></i> Bonus Incluido en Todos los Planes</h3>
+                <div class="bonus-grid">
+                    <div class="bonus-item">
+                        <i class="fas fa-server"></i>
+                        <h4>Recomendaciones de Hosting</h4>
+                        <p>Te proporciono una <strong>lista curada</strong> de los mejores servicios de hosting según tu presupuesto y necesidades (desde $3/mes).</p>
+                    </div>
+                    <div class="bonus-item">
+                        <i class="fas fa-book"></i>
+                        <h4>Guías de Implementación</h4>
+                        <p>Incluyo <strong>tutoriales paso a paso</strong> de cómo subir tus archivos en los hostings más populares (Hostinger, SiteGround, etc.).</p>
+                    </div>
+                    <div class="bonus-item">
+                        <i class="fas fa-life-ring"></i>
+                        <h4>Soporte Post-Entrega</h4>
+                        <p><strong>30 días de soporte</strong> para resolver dudas sobre cómo usar los archivos o subirlos a tu hosting.</p>
+                    </div>
+                    <div class="bonus-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Documentación Completa</h4>
+                        <p>Manual detallado explicando la <strong>estructura de archivos</strong>, cómo editarlos y personalizarlos en el futuro.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hosting-recommendations">
+                <h3><i class="fas fa-star"></i> Hostings Recomendados</h3>
+                <p class="hosting-intro">Te ayudo a elegir el mejor hosting según tu plan:</p>
+                
+                <div class="hosting-grid">
+                    <div class="hosting-card">
+                        <div class="hosting-badge budget">Económico</div>
+                        <h4>Hostinger</h4>
+                        <p class="hosting-price">Desde $3/mes</p>
+                        <ul class="hosting-features">
+                            <li><i class="fas fa-check"></i> Ideal para Plan Básico</li>
+                            <li><i class="fas fa-check"></i> SSL gratis incluido</li>
+                            <li><i class="fas fa-check"></i> Panel fácil de usar</li>
+                            <li><i class="fas fa-check"></i> Soporte 24/7</li>
+                        </ul>
+                        <p class="hosting-note">✅ Incluyo guía de instalación</p>
+                    </div>
+
+                    <div class="hosting-card featured-hosting">
+                        <div class="hosting-badge recommended">Recomendado</div>
+                        <h4>SiteGround</h4>
+                        <p class="hosting-price">Desde $7/mes</p>
+                        <ul class="hosting-features">
+                            <li><i class="fas fa-check"></i> Ideal para Plan Estándar</li>
+                            <li><i class="fas fa-check"></i> Velocidad superior</li>
+                            <li><i class="fas fa-check"></i> Backups automáticos</li>
+                            <li><i class="fas fa-check"></i> Soporte experto</li>
+                        </ul>
+                        <p class="hosting-note">✅ Incluyo guía de instalación</p>
+                    </div>
+
+                    <div class="hosting-card">
+                        <div class="hosting-badge premium">Premium</div>
+                        <h4>Cloudways</h4>
+                        <p class="hosting-price">Desde $12/mes</p>
+                        <ul class="hosting-features">
+                            <li><i class="fas fa-check"></i> Ideal para E-commerce</li>
+                            <li><i class="fas fa-check"></i> Servidores en la nube</li>
+                            <li><i class="fas fa-check"></i> Máximo rendimiento</li>
+                            <li><i class="fas fa-check"></i> Escalabilidad</li>
+                        </ul>
+                        <p class="hosting-note">✅ Incluyo guía de instalación</p>
+                    </div>
+                </div>
+
+                <p class="hosting-disclaimer">
+                    <i class="fas fa-info-circle"></i> <strong>Nota:</strong> No tengo afiliación con estos servicios. Son recomendaciones honestas basadas en experiencia profesional. El costo del hosting es adicional y lo pagas directamente al proveedor.
+                </p>
+            </div>
+
+            <div class="no-include-section">
+                <h3><i class="fas fa-times-circle"></i> Lo Que NO Incluyo</h3>
+                <div class="no-include-grid">
+                    <div class="no-include-item">
+                        <i class="fas fa-server"></i>
+                        <span>Hosting (alojamiento web)</span>
+                    </div>
+                    <div class="no-include-item">
+                        <i class="fas fa-globe"></i>
+                        <span>Dominio (www.tunegocio.com)</span>
+                    </div>
+                    <div class="no-include-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Mantenimiento mensual</span>
+                    </div>
+                    <div class="no-include-item">
+                        <i class="fas fa-sync"></i>
+                        <span>Actualizaciones futuras</span>
+                    </div>
+                </div>
+                <p class="no-include-note">
+                    <strong>¿Por qué?</strong> Para darte <strong>libertad total</strong> y evitar costos recurrentes. Tú eliges tu proveedor y tienes control completo de tu sitio.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Sebastián Martínez - Diseñador Web Freelance</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="functional.js"></script>
+</body>
+</html>

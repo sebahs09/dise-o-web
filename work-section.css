@@ -1,0 +1,304 @@
+/* Sección Cómo Trabajo */
+.how-i-work-section {
+    padding: 6rem 0;
+    background: var(--light-bg);
+}
+
+.work-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.process-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.process-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.process-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Bonus Incluido */
+.what-includes {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.what-includes h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--primary-color);
+}
+
+.bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.bonus-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.bonus-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.bonus-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+}
+
+.bonus-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Hosting Recommendations */
+.hosting-recommendations {
+    margin: 4rem 0;
+}
+
+.hosting-recommendations h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.hosting-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+.hosting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hosting-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.hosting-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.hosting-card.featured-hosting {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.hosting-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+}
+
+.hosting-badge.budget {
+    background: var(--success);
+}
+
+.hosting-badge.recommended {
+    background: var(--primary-color);
+}
+
+.hosting-badge.premium {
+    background: var(--warning);
+}
+
+.hosting-card h4 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.hosting-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.hosting-features {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+}
+
+.hosting-features li {
+    padding: 0.6rem 0;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.hosting-features i {
+    color: var(--success);
+    font-size: 1.1rem;
+}
+
+.hosting-note {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #fef3c7;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    color: #92400e;
+}
+
+.hosting-disclaimer {
+    background: #e0f2fe;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.hosting-disclaimer i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+/* Lo Que NO Incluyo */
+.no-include-section {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.no-include-section h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--error);
+}
+
+.no-include-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.no-include-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.no-include-item i {
+    font-size: 2.5rem;
+    color: #cbd5e1;
+}
+
+.no-include-item span {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.no-include-note {
+    background: #fef3c7;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #92400e;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .how-i-work-section {
+        padding: 3rem 0;
+    }
+
+    .work-process {
+        grid-template-columns: 1fr;
+    }
+
+    .bonus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hosting-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hosting-card.featured-hosting {
+        transform: scale(1);
+    }
+
+    .no-include-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .what-includes,
+    .no-include-section {
+        padding: 2rem 1.5rem;
+    }
+}

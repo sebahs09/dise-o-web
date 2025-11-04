@@ -1,0 +1,20 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Carpetas de IDE
+.vscode/
+.idea/
+
+# Archivos de respaldo
+*.bak
+*~
+
+# Archivos de Windows
+*.lnk

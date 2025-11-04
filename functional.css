@@ -1,0 +1,421 @@
+/* Estilos para Funcionalidades Interactivas */
+
+/* Modal Base */
+.functional-modal {
+    display: block;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    margin: 3% auto;
+    padding: 2.5rem;
+    border-radius: 20px;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+    position: relative;
+}
+
+.cart-content {
+    max-width: 700px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-bottom: 2rem;
+    color: #1e293b;
+    font-size: 1.8rem;
+}
+
+/* Formularios */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.form-control {
+    padding: 0.9rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Botones */
+.btn-confirm {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+    padding: 0.9rem 2rem;
+    background: white;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Total de Reserva */
+.booking-total {
+    background: #f1f5f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.booking-total p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.booking-total strong {
+    color: #2563eb;
+}
+
+/* Carrito de Compras */
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.cart-items {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 3rem;
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.8fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.3s;
+}
+
+.cart-item:hover {
+    background: #f8fafc;
+}
+
+.cart-item-info h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+.cart-item-info p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.qty-btn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.remove-btn:hover {
+    transform: scale(1.2);
+}
+
+.cart-item-total {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.cart-summary {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    font-size: 1.05rem;
+}
+
+.summary-row.total {
+    border-top: 2px solid #e2e8f0;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    font-size: 1.3rem;
+    color: #1e293b;
+}
+
+.cart-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.cart-actions button {
+    flex: 1;
+}
+
+/* Notificaciones */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #10b981;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10001;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s ease;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar personalizado */
+.modal-content::-webkit-scrollbar,
+.cart-items::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track,
+.cart-items::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb,
+.cart-items::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover,
+.cart-items::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 5% 10px;
+        padding: 1.5rem;
+        max-height: 90vh;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .cart-item-total {
+        text-align: left;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+    }
+
+    .notification {
+        right: 10px;
+        left: 10px;
+        top: 10px;
+    }
+}
+
+/* Mejoras visuales para los demos */
+#basico .demo-btn,
+#basico .gold-btn,
+#estandar .demo-btn,
+#estandar .demo-btn-small,
+#estandar .blue-btn,
+#ecommerce .demo-btn-small.pink-btn {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#basico .demo-btn::after,
+#basico .gold-btn::after,
+#estandar .demo-btn::after,
+#estandar .demo-btn-small::after,
+#estandar .blue-btn::after,
+#ecommerce .demo-btn-small.pink-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+#basico .demo-btn:active::after,
+#basico .gold-btn:active::after,
+#estandar .demo-btn:active::after,
+#estandar .demo-btn-small:active::after,
+#estandar .blue-btn:active::after,
+#ecommerce .demo-btn-small.pink-btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Hover mejorado para íconos */
+#ecommerce .shop-icons i {
+    transition: all 0.3s ease;
+}
+
+#ecommerce .shop-icons i:hover {
+    transform: scale(1.2);
+    color: #ec4899;
+}
