@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador IA Gratis - Sebastián Martínez</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header .badge {
+            background: #10b981;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .header p {
+            color: #64748b;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+
+        .card h2 {
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #475569;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102,126,234,0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .result {
+            display: none;
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .result.active {
+            display: block;
+        }
+
+        .result h3 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .result-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .result-section h4 {
+            color: #475569;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-section p {
+            color: #64748b;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .price-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .price-box .amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .prompt-box {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #475569;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .copy-btn:hover {
+            background: #64748b;
+        }
+
+        .example-prompts {
+            background: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .example-prompts h4 {
+            color: #92400e;
+            margin-bottom: 1rem;
+        }
+
+        .example-prompts ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .example-prompts li {
+            color: #78350f;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #fde68a;
+        }
+
+        .example-prompts li:last-child {
+            border-bottom: none;
+        }
+
+        .info-box {
+            background: #dbeafe;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box h4 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p {
+            color: #1e3a8a;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <i class="fas fa-robot"></i> Cotizador IA 
+                <span class="badge">100% GRATIS</span>
+            </h1>
+            <p>IA inteligente sin costos - Analiza proyectos y genera cotizaciones automáticamente</p>
+        </div>
+
+        <!-- Info Box -->
+        <div class="card">
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> ¿Cómo funciona?</h4>
+                <p>Esta herramienta usa IA local (sin APIs de pago). Describe el proyecto del cliente y la IA analizará automáticamente qué plan necesita, calculará el precio y generará un prompt para crear la maqueta.</p>
+            </div>
+        </div>
+
+        <!-- Main Card -->
+        <div class="card">
+            <h2><i class="fas fa-comments"></i> Describe el Proyecto del Cliente</h2>
+
+            <!-- Ejemplos -->
+            <div class="example-prompts">
+                <h4><i class="fas fa-lightbulb"></i> Ejemplos de descripción:</h4>
+                <ul>
+                    <li>"Cliente tiene una barbería moderna en Palermo, quiere landing page con sistema de reservas online, galería de cortes y mapa de ubicación"</li>
+                    <li>"Restaurante gourmet necesita sitio web elegante con menú digital, fotos de platos, formulario de reservas y sección de chef"</li>
+                    <li>"Tienda de ropa online, necesita e-commerce con carrito, categorías de productos, filtros y pasarela de pago"</li>
+                    <li>"Gimnasio local quiere página simple con horarios, precios, formulario de contacto y galería de instalaciones"</li>
+                </ul>
+            </div>
+
+            <form id="aiForm">
+                <div class="form-group">
+                    <label>Nombre del Cliente</label>
+                    <input type="text" id="clientName" required placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label>Descripción del Proyecto</label>
+                    <textarea id="projectDescription" required placeholder="Describe lo que necesita el cliente: tipo de negocio, funcionalidades, estilo, urgencia, etc."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="generateBtn">
+                    <i class="fas fa-magic"></i> Generar Cotización con IA
+                </button>
+            </form>
+
+            <!-- Loading -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p style="color: #64748b;">La IA está analizando el proyecto...</p>
+            </div>
+
+            <!-- Result -->
+            <div class="result" id="result">
+                <h3><i class="fas fa-check-circle"></i> Cotización Generada</h3>
+
+                <div class="result-section">
+                    <h4>Cliente</h4>
+                    <p id="clientNameResult"></p>
+                </div>
+
+                <div class="result-section">
+                    <h4>Análisis del Proyecto</h4>
+                    <p id="analysis"></p>
+                </div>
+
+                <div class="result-section">
+                    <h4>Plan Recomendado</h4>
+                    <p id="plan"></p>
+                </div>
+
+                <div class="result-section">
+                    <h4>Funcionalidades Incluidas</h4>
+                    <p id="features"></p>
+                </div>
+
+                <div class="price-box">
+                    <h3>Precio Estimado</h3>
+                    <div class="amount">$<span id="price">0</span></div>
+                </div>
+
+                <div class="result-section">
+                    <h4>Prompt para Generar Maqueta (Copiar y pegar en ChatGPT/Claude/v0.dev)</h4>
+                    <div class="prompt-box">
+                        <button class="copy-btn" onclick="copyPrompt()"><i class="fas fa-copy"></i> Copiar</button>
+                        <div id="mockupPrompt"></div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="generatePDF()" style="margin-top: 2rem;">
+                    <i class="fas fa-file-pdf"></i> Descargar PDF de Cotización
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // IA Local - Sistema de análisis inteligente
+        function analyzeProject(description) {
+            const desc = description.toLowerCase();
+            
+            // Detectar tipo de proyecto
+            let basePlan = 'Básico';
+            let basePrice = 100;
+            
+            if (desc.includes('e-commerce') || desc.includes('tienda') || desc.includes('carrito') || desc.includes('vender')) {
+                basePlan = 'E-commerce';
+                basePrice = 400;
+            } else if (desc.includes('multi') || desc.includes('varias páginas') || desc.includes('secciones') || desc.includes('completo')) {
+                basePlan = 'Estándar';
+                basePrice = 200;
+            }
+            
+            // Detectar extras
+            const extras = [];
+            let extrasCost = 0;
+            
+            if (desc.includes('galería') || desc.includes('fotos') || desc.includes('imágenes')) {
+                extras.push('Galería Avanzada');
+                extrasCost += 30;
+            }
+            if (desc.includes('formulario') || desc.includes('contacto')) {
+                extras.push('Formulario de Contacto');
+                extrasCost += 20;
+            }
+            if (desc.includes('mapa') || desc.includes('ubicación') || desc.includes('dirección')) {
+                extras.push('Google Maps');
+                extrasCost += 15;
+            }
+            if (desc.includes('reserva') || desc.includes('cita') || desc.includes('turno')) {
+                extras.push('Sistema de Reservas');
+                extrasCost += 60;
+            }
+            if (desc.includes('blog') || desc.includes('noticias') || desc.includes('artículos')) {
+                extras.push('Blog/Noticias');
+                extrasCost += 50;
+            }
+            if (desc.includes('newsletter') || desc.includes('suscripción')) {
+                extras.push('Newsletter');
+                extrasCost += 25;
+            }
+            if (desc.includes('animación') || desc.includes('interactivo')) {
+                extras.push('Animaciones Custom');
+                extrasCost += 40;
+            }
+            if (desc.includes('idioma') || desc.includes('bilingüe') || desc.includes('inglés')) {
+                extras.push('Multi-idioma');
+                extrasCost += 70;
+            }
+            
+            // Detectar urgencia
+            let urgencyMultiplier = 1;
+            let urgencyText = 'Normal (15-21 días)';
+            
+            if (desc.includes('urgente') || desc.includes('rápido') || desc.includes('pronto')) {
+                urgencyMultiplier = 1.3;
+                urgencyText = 'Urgente (7-10 días) +30%';
+            }
+            if (desc.includes('express') || desc.includes('inmediato') || desc.includes('ya')) {
+                urgencyMultiplier = 1.5;
+                urgencyText = 'Express (3-5 días) +50%';
+            }
+            
+            // Calcular precio total
+            const totalPrice = Math.round((basePrice + extrasCost) * urgencyMultiplier);
+            
+            // Detectar tipo de negocio
+            let businessType = 'negocio';
+            if (desc.includes('barbería') || desc.includes('peluquería')) businessType = 'barbería';
+            else if (desc.includes('restaurante') || desc.includes('comida')) businessType = 'restaurante';
+            else if (desc.includes('tienda') || desc.includes('ropa')) businessType = 'tienda';
+            else if (desc.includes('gimnasio') || desc.includes('fitness')) businessType = 'gimnasio';
+            else if (desc.includes('hotel') || desc.includes('hospedaje')) businessType = 'hotel';
+            
+            // Generar análisis
+            const analysis = `Proyecto de ${businessType} que requiere un sitio web ${basePlan.toLowerCase()}. ${extras.length > 0 ? `Incluye ${extras.length} funcionalidades adicionales.` : 'Sin extras adicionales.'} ${urgencyText !== 'Normal (15-21 días)' ? `Cliente solicita entrega ${urgencyText.toLowerCase()}.` : ''}`;
+            
+            // Generar prompt de maqueta
+            const mockupPrompt = `Crea una maqueta HTML/CSS completa y moderna para un ${businessType}.
+
+CARACTERÍSTICAS:
+- Diseño: Moderno, responsive, profesional
+- Colores: Paleta apropiada para ${businessType}
+- Secciones: Hero, ${extras.join(', ').toLowerCase() || 'servicios, sobre nosotros'}
+- Estilo: Clean, minimalista, con buenos espacios
+
+REQUISITOS TÉCNICOS:
+- HTML5 semántico
+- CSS3 con Flexbox/Grid
+- Responsive (mobile-first)
+- Animaciones suaves
+- Font Awesome para iconos
+- Google Fonts
+
+ESTRUCTURA:
+1. Header con navegación
+2. Hero section impactante
+3. ${extras.join('\n4. ') || 'Sección de servicios\n4. Galería\n5. Formulario de contacto'}
+${extras.length > 0 ? (extras.length + 4) : 6}. Footer con redes sociales
+
+El código debe ser limpio, comentado y listo para usar.`;
+            
+            return {
+                analysis,
+                plan: `Plan ${basePlan} - $${basePrice}`,
+                features: extras.length > 0 ? `• ${extras.join('\n• ')}\n\nUrgencia: ${urgencyText}` : `Sin extras adicionales\n\nUrgencia: ${urgencyText}`,
+                price: totalPrice,
+                mockupPrompt
+            };
+        }
+
+        // Generar cotización
+        document.getElementById('aiForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const clientName = document.getElementById('clientName').value;
+            const description = document.getElementById('projectDescription').value;
+
+            // Mostrar loading
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('result').classList.remove('active');
+            document.getElementById('generateBtn').disabled = true;
+
+            // Simular procesamiento de IA (para efecto visual)
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            try {
+                // Analizar con IA local
+                const result = analyzeProject(description);
+
+                // Mostrar resultados
+                document.getElementById('clientNameResult').textContent = clientName;
+                document.getElementById('analysis').textContent = result.analysis;
+                document.getElementById('plan').textContent = result.plan;
+                document.getElementById('features').textContent = result.features;
+                document.getElementById('price').textContent = result.price;
+                document.getElementById('mockupPrompt').textContent = result.mockupPrompt;
+
+                // Guardar para PDF
+                window.currentQuote = {
+                    clientName,
+                    description,
+                    ...result
+                };
+
+                document.getElementById('loading').classList.remove('active');
+                document.getElementById('result').classList.add('active');
+
+            } catch (error) {
+                alert('❌ Error: ' + error.message);
+                console.error(error);
+            } finally {
+                document.getElementById('generateBtn').disabled = false;
+            }
+        });
+
+        // Copiar prompt
+        function copyPrompt() {
+            const prompt = document.getElementById('mockupPrompt').textContent;
+            navigator.clipboard.writeText(prompt);
+            alert('✅ Prompt copiado al portapapeles!');
+        }
+
+        // Generar PDF moderno
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const quote = window.currentQuote;
+
+            // Header moderno con gradiente simulado
+            doc.setFillColor(102, 126, 234);
+            doc.rect(0, 0, 210, 50, 'F');
+            
+            doc.setFillColor(118, 75, 162);
+            doc.triangle(210, 0, 210, 50, 150, 50, 'F');
+
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(28);
+            doc.text('COTIZACIÓN', 20, 25);
+            
+            doc.setFontSize(11);
+            doc.text('Generada con IA', 20, 35);
+            doc.text(new Date().toLocaleDateString('es-AR'), 170, 35);
+
+            // Cliente
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(14);
+            doc.text('Cliente', 20, 65);
+            
+            doc.setFontSize(11);
+            doc.text(quote.clientName, 20, 73);
+
+            // Análisis
+            doc.setFontSize(14);
+            doc.text('Análisis del Proyecto', 20, 88);
+            
+            doc.setFontSize(10);
+            const analysisLines = doc.splitTextToSize(quote.analysis, 170);
+            doc.text(analysisLines, 20, 96);
+
+            // Plan
+            let yPos = 96 + (analysisLines.length * 5) + 10;
+            doc.setFontSize(14);
+            doc.text('Plan Recomendado', 20, yPos);
+            
+            doc.setFontSize(10);
+            doc.text(quote.plan, 20, yPos + 8);
+
+            // Features
+            yPos += 20;
+            doc.setFontSize(14);
+            doc.text('Funcionalidades', 20, yPos);
+            
+            doc.setFontSize(10);
+            const featureLines = doc.splitTextToSize(quote.features, 170);
+            doc.text(featureLines, 20, yPos + 8);
+
+            // Precio destacado
+            yPos += 8 + (featureLines.length * 5) + 15;
+            doc.setFillColor(102, 126, 234);
+            doc.roundedRect(20, yPos, 170, 30, 5, 5, 'F');
+            
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(14);
+            doc.text('PRECIO TOTAL', 105, yPos + 12, { align: 'center' });
+            doc.setFontSize(32);
+            doc.text(`$${quote.price}`, 105, yPos + 25, { align: 'center' });
+
+            // Footer
+            doc.setTextColor(100, 100, 100);
+            doc.setFontSize(9);
+            doc.text('Sebastián Martínez - Diseñador Web Freelance', 105, 280, { align: 'center' });
+            doc.text('sebastian.webdesign@gmail.com | github.com/sebahs09', 105, 285, { align: 'center' });
+
+            // Guardar
+            doc.save(`Cotizacion_${quote.clientName.replace(/\s+/g, '_')}_${new Date().toLocaleDateString('es-AR').replace(/\//g, '-')}.pdf`);
+            
+            alert('✅ PDF generado exitosamente!');
+        }
+    </script>
+</body>
+</html>
