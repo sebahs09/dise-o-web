@@ -403,69 +403,104 @@
         function analyzeProject(description) {
             const desc = description.toLowerCase();
             
-            // Detectar tipo de proyecto con más precisión
+            // Sistema de puntuación de complejidad
+            let complexityScore = 0;
+            
+            // Detectar tipo de proyecto base
             let basePlan = 'Landing Page (1 página)';
             let basePrice = 100;
+            let priceRange = { min: 80, max: 120 };
             
             // E-commerce
             if (desc.includes('e-commerce') || desc.includes('tienda') || desc.includes('carrito') || desc.includes('vender') || desc.includes('productos')) {
                 basePlan = 'E-commerce';
                 basePrice = 400;
+                priceRange = { min: 350, max: 500 };
+                complexityScore += 3;
             }
             // Sitio Mediano (6-10 páginas)
             else if (desc.includes('6') || desc.includes('7') || desc.includes('8') || desc.includes('9') || desc.includes('10') || desc.includes('mediano') || desc.includes('completo') || desc.includes('muchas secciones')) {
                 basePlan = 'Sitio Mediano (6-10 páginas)';
                 basePrice = 300;
+                priceRange = { min: 250, max: 350 };
+                complexityScore += 2;
             }
             // Sitio Pequeño (3-5 páginas)
             else if (desc.includes('3') || desc.includes('4') || desc.includes('5') || desc.includes('multi') || desc.includes('varias páginas') || desc.includes('pequeño')) {
                 basePlan = 'Sitio Pequeño (3-5 páginas)';
                 basePrice = 200;
+                priceRange = { min: 150, max: 250 };
+                complexityScore += 1;
+            }
+            // Landing Page
+            else {
+                priceRange = { min: 80, max: 120 };
             }
             
-            // Detectar extras según tabla de mercado
+            // Analizar complejidad adicional
+            if (desc.includes('complejo') || desc.includes('avanzado') || desc.includes('sofisticado')) complexityScore += 2;
+            if (desc.includes('simple') || desc.includes('básico') || desc.includes('sencillo')) complexityScore -= 1;
+            if (desc.includes('profesional') || desc.includes('corporativo') || desc.includes('empresa')) complexityScore += 1;
+            if (desc.includes('moderno') || desc.includes('elegante') || desc.includes('premium')) complexityScore += 1;
+            
+            // Detectar extras según tabla de mercado (con ajuste de complejidad)
             const extras = [];
             let extrasCost = 0;
             
             // Carga de contenido
             if (desc.includes('contenido') || desc.includes('textos') || desc.includes('redacción') || desc.includes('buscar imágenes')) {
-                extras.push('🖼️ Carga de contenido (+$20-50)');
-                extrasCost += 35;
+                const cost = complexityScore >= 2 ? 45 : (complexityScore >= 1 ? 35 : 25);
+                extras.push(`🖼️ Carga de contenido (+$${cost})`);
+                extrasCost += cost;
+                complexityScore += 1;
             }
             // Diseño 100% personalizado
             if (desc.includes('personalizado') || desc.includes('desde cero') || desc.includes('único') || desc.includes('exclusivo')) {
-                extras.push('🎨 Diseño 100% personalizado (+$50-100)');
-                extrasCost += 75;
+                const cost = complexityScore >= 3 ? 100 : (complexityScore >= 2 ? 80 : 60);
+                extras.push(`🎨 Diseño 100% personalizado (+$${cost})`);
+                extrasCost += cost;
+                complexityScore += 3;
             }
             // Optimización móvil avanzada
             if (desc.includes('móvil') || desc.includes('mobile-first') || desc.includes('responsive avanzado')) {
-                extras.push('📱 Optimización móvil avanzada (+$20-40)');
-                extrasCost += 30;
+                const cost = complexityScore >= 2 ? 40 : 25;
+                extras.push(`📱 Optimización móvil avanzada (+$${cost})`);
+                extrasCost += cost;
+                complexityScore += 1;
             }
             // Formulario avanzado
             if (desc.includes('formulario avanzado') || desc.includes('validación') || desc.includes('formulario dinámico')) {
-                extras.push('💬 Formulario avanzado (+$15-30)');
-                extrasCost += 22;
+                const cost = complexityScore >= 2 ? 30 : 20;
+                extras.push(`💬 Formulario avanzado (+$${cost})`);
+                extrasCost += cost;
+                complexityScore += 1;
             }
             // Google Maps / Redes sociales
             if (desc.includes('mapa') || desc.includes('ubicación') || desc.includes('instagram') || desc.includes('redes sociales')) {
-                extras.push('🗺️ Google Maps / Redes sociales (+$10-25)');
-                extrasCost += 17;
+                const cost = complexityScore >= 2 ? 25 : 15;
+                extras.push(`🗺️ Google Maps / Redes sociales (+$${cost})`);
+                extrasCost += cost;
             }
             // Animaciones JS
             if (desc.includes('animación') || desc.includes('efectos') || desc.includes('parallax') || desc.includes('interactivo')) {
-                extras.push('⚡ Animaciones JS / Efectos especiales (+$25-75)');
-                extrasCost += 50;
+                const cost = complexityScore >= 3 ? 75 : (complexityScore >= 2 ? 55 : 35);
+                extras.push(`⚡ Animaciones JS / Efectos especiales (+$${cost})`);
+                extrasCost += cost;
+                complexityScore += 2;
             }
             // Traducción bilingüe
             if (desc.includes('idioma') || desc.includes('bilingüe') || desc.includes('inglés') || desc.includes('traducción')) {
-                extras.push('🧾 Traducción bilingüe (+$40-80)');
-                extrasCost += 60;
+                const cost = complexityScore >= 2 ? 80 : 50;
+                extras.push(`🧾 Traducción bilingüe (+$${cost})`);
+                extrasCost += cost;
+                complexityScore += 2;
             }
             // APIs externas
             if (desc.includes('api') || desc.includes('whatsapp') || desc.includes('reservas') || desc.includes('integración')) {
-                extras.push('🔒 Integración APIs externas (+$30-100)');
-                extrasCost += 65;
+                const cost = complexityScore >= 3 ? 100 : (complexityScore >= 2 ? 70 : 40);
+                extras.push(`🔒 Integración APIs externas (+$${cost})`);
+                extrasCost += cost;
+                complexityScore += 2;
             }
             
             // Detectar urgencia
@@ -481,8 +516,12 @@
                 urgencyText = 'Express (3-5 días) +50%';
             }
             
-            // Calcular precio total
-            const totalPrice = Math.round((basePrice + extrasCost) * urgencyMultiplier);
+            // Ajustar precio base según complejidad dentro del rango
+            const complexityPercentage = Math.min(complexityScore / 10, 1); // Normalizar entre 0 y 1
+            const adjustedBasePrice = Math.round(priceRange.min + (priceRange.max - priceRange.min) * complexityPercentage);
+            
+            // Calcular precio total con precio ajustado
+            const totalPrice = Math.round((adjustedBasePrice + extrasCost) * urgencyMultiplier);
             
             // Detectar tipo de negocio
             let businessType = 'negocio';
@@ -492,8 +531,13 @@
             else if (desc.includes('gimnasio') || desc.includes('fitness')) businessType = 'gimnasio';
             else if (desc.includes('hotel') || desc.includes('hospedaje')) businessType = 'hotel';
             
-            // Generar análisis
-            const analysis = `Proyecto de ${businessType} que requiere un sitio web ${basePlan.toLowerCase()}. ${extras.length > 0 ? `Incluye ${extras.length} funcionalidades adicionales.` : 'Sin extras adicionales.'} ${urgencyText !== 'Normal (15-21 días)' ? `Cliente solicita entrega ${urgencyText.toLowerCase()}.` : ''}`;
+            // Generar análisis con nivel de complejidad
+            let complexityLevel = 'Baja';
+            if (complexityScore >= 8) complexityLevel = 'Muy Alta';
+            else if (complexityScore >= 5) complexityLevel = 'Alta';
+            else if (complexityScore >= 3) complexityLevel = 'Media';
+            
+            const analysis = `Proyecto de ${businessType} que requiere un sitio web ${basePlan.toLowerCase()}. Complejidad detectada: ${complexityLevel} (score: ${complexityScore}). ${extras.length > 0 ? `Incluye ${extras.length} funcionalidades adicionales.` : 'Sin extras adicionales.'} ${urgencyText !== 'Normal (15-21 días)' ? `Cliente solicita entrega ${urgencyText.toLowerCase()}.` : ''} Precio base ajustado: $${adjustedBasePrice} (rango: $${priceRange.min}-$${priceRange.max}).`;
             
             // Generar prompt de maqueta MUY específico
             const mockupPrompt = `Crea una maqueta HTML/CSS completa y funcional basada en esta descripción del cliente:
