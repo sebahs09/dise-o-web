@@ -1,0 +1,243 @@
+===========================================
+GUIA: ENVIAR EMAILS MASIVOS SIN PARECER SPAM
+===========================================
+
+METODO 1: CCO (BCC) - SIMPLE Y RAPIDO
+-------------------------------------------
+
+QUE ES:
+- CCO = Con Copia Oculta
+- Los destinatarios NO ven los emails de los demas
+- Parece un email individual
+
+COMO HACERLO:
+1. Abre Gmail/Outlook
+2. Nuevo mensaje
+3. En "Para": pon TU PROPIO EMAIL
+4. Click en "CCO"
+5. En CCO: pega TODOS los emails separados por coma
+6. Escribe asunto y mensaje
+7. Enviar
+
+LIMITES:
+- Gmail: 500 emails/dia
+- Outlook: 300 emails/dia
+- Recomendado: 50 por envio
+
+VENTAJAS:
+- Gratis
+- Facil
+- Privado
+
+DESVENTAJAS:
+- No personaliza
+- Puede ir a spam
+
+===========================================
+
+METODO 2: MAIL MERGE (GMAIL + GOOGLE SHEETS) - RECOMENDADO
+-------------------------------------------
+
+QUE ES:
+- Envia emails personalizados automaticamente
+- Cada email parece individual
+- GRATIS hasta 50 emails/dia
+
+HERRAMIENTA: Yet Another Mail Merge (YAMM)
+
+PASO A PASO:
+
+1. INSTALAR YAMM:
+   - Ve a Google Workspace Marketplace
+   - Busca "Yet Another Mail Merge"
+   - Instalar (GRATIS)
+
+2. CREAR GOOGLE SHEET:
+   Columnas: Email | Nombre | Negocio
+   
+   juan@ejemplo.com | Juan | Restaurante La Cocina
+   maria@ejemplo.com | Maria | Tienda Ropa
+
+3. ESCRIBIR BORRADOR EN GMAIL:
+   Asunto: Propuesta para {{Negocio}}
+   
+   Hola {{Nombre}},
+   Vi tu negocio {{Negocio}} y me gustaria...
+
+4. ENVIAR:
+   - En Google Sheets: Extensions > YAMM > Start Mail Merge
+   - Selecciona borrador
+   - Send Emails
+
+VENTAJAS:
+- GRATIS (50/dia)
+- Personalizacion automatica
+- Seguimiento de aperturas
+- No parece spam
+
+===========================================
+
+METODO 3: SENDINBLUE - PARA VOLUMEN
+-------------------------------------------
+
+PLAN GRATIS:
+- Contactos ILIMITADOS
+- 300 emails/DIA
+- Personalizacion
+
+COMO USARLO:
+1. Crea cuenta en sendinblue.com
+2. Importa contactos
+3. Crea campana
+4. Personaliza
+5. Enviar
+
+VENTAJAS:
+- 300 emails/dia gratis
+- Contactos ilimitados
+- Estadisticas
+
+===========================================
+
+RECOMENDACION SEGUN TU CASO:
+-------------------------------------------
+
+POCOS CONTACTOS (menos de 20):
+- Usa CCO (BCC)
+
+CONTACTOS MEDIANOS (20-50):
+- Usa YAMM (Mail Merge)
+
+MUCHOS CONTACTOS (50-300):
+- Usa SendinBlue
+
+===========================================
+
+COMO EVITAR IR A SPAM:
+-------------------------------------------
+
+1. PERSONALIZA:
+   - Usa el nombre
+   - Menciona algo especifico
+
+2. ASUNTO ATRACTIVO:
+   SI: "Propuesta de diseno web para [Negocio]"
+   NO: "OFERTA INCREIBLE!!!"
+
+3. EVITA PALABRAS SPAM:
+   NO: Gratis, Oferta, Urgente, Dinero
+   SI: Propuesta, Ayuda, Idea, Mejora
+
+4. INCLUYE DESUSCRIPCION:
+   "Si no deseas mas emails, responde con REMOVER"
+
+5. NO ENVIES MUCHOS DE GOLPE:
+   - Maximo 50 por hora
+   - Espacia los envios
+
+6. CALIENTA TU CUENTA:
+   - Dia 1: 10 emails
+   - Dia 2: 20 emails
+   - Dia 3: 30 emails
+
+===========================================
+
+PLANTILLA OPTIMIZADA:
+-------------------------------------------
+
+ASUNTO: Propuesta de diseno web para {{Negocio}}
+
+Hola {{Nombre}},
+
+Soy Sebastian, disenador web freelance.
+
+Vi {{Negocio}} y me llamo la atencion.
+
+Ayudo a negocios como el tuyo a atraer mas clientes online.
+
+Te interesaria ver mi trabajo?
+https://sebahs09.github.io/dise-o-web/
+
+Respondo en menos de 24 horas.
+
+Saludos,
+Sebastian Martinez
+Disenador Web Freelance
++54 11 22548906
+sebastian.webdesign@gmail.com
+
+PD: Si no te interesa, responde con NO INTERESA.
+
+===========================================
+
+EJEMPLO PRACTICO CON YAMM:
+-------------------------------------------
+
+GOOGLE SHEET:
+Email | Nombre | Negocio | Tipo
+juan@resto.com | Juan | La Cocina | Restaurante
+maria@tienda.com | Maria | Moda Bella | Tienda
+
+BORRADOR GMAIL:
+Asunto: Hola {{Nombre}}, propuesta para {{Negocio}}
+
+Hola {{Nombre}},
+Vi {{Negocio}} y me parecio interesante.
+Ayudo a {{Tipo}}s como el tuyo a conseguir mas clientes.
+
+RESULTADO:
+Juan recibe: "Hola Juan, propuesta para La Cocina"
+Maria recibe: "Hola Maria, propuesta para Moda Bella"
+
+Cada uno recibe un email PERSONALIZADO!
+
+===========================================
+
+HERRAMIENTAS RECOMENDADAS:
+-------------------------------------------
+
+GRATIS:
+1. Yet Another Mail Merge (YAMM) - 50/dia
+2. SendinBlue - 300/dia
+3. Mailchimp - 500 contactos
+
+PAGO:
+1. YAMM Premium - 400/dia ($24/ano)
+2. SendinBlue Lite - $25/mes
+3. Mailchimp Essentials - $13/mes
+
+===========================================
+
+ESTRATEGIA DE SECUENCIA:
+-------------------------------------------
+
+EMAIL 1 (Dia 1): Presentacion
+- Quien eres
+- Link al portafolio
+
+EMAIL 2 (Dia 3): Valor
+- Tip util
+- Caso de exito
+
+EMAIL 3 (Dia 7): Oferta
+- Propuesta especifica
+- CTA claro
+
+EMAIL 4 (Dia 14): Ultimo contacto
+- Ultima oportunidad
+- Cierre amigable
+
+===========================================
+
+CHECKLIST ANTES DE ENVIAR:
+-------------------------------------------
+
+- Personalice con nombre y negocio?
+- Asunto atractivo sin spam?
+- Incluye opcion de desuscripcion?
+- Revise ortografia?
+- Link al portafolio funciona?
+- Firma profesional completa?
+- Envio menos de 50 por hora?
+
+===========================================
