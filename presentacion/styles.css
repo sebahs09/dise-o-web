@@ -1113,6 +1113,43 @@ html {
     font-weight: 500;
 }
 
+.btn-secondary {
+    display: inline-block;
+    padding: 15px 35px;
+    background: transparent;
+    color: #2563eb;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid #2563eb;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+}
+
+.btn-secondary:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero-cta a {
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .btn-secondary {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
+
 /* Sobre Mí Section */
 .about-me-section {
     padding: 80px 2rem;
