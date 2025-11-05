@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizador Pro - Sebastián Martínez</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -489,9 +490,13 @@
             }
         }
 
-        // Generar PDF (simulado - en producción usar jsPDF)
+        // Generar PDF real
         function generatePDF() {
             const clientName = document.getElementById('clientName').value;
+            const businessType = document.getElementById('businessType').value;
+            const basePlan = document.getElementById('basePlan').options[document.getElementById('basePlan').selectedIndex].text;
+            const urgency = document.getElementById('urgency').options[document.getElementById('urgency').selectedIndex].text;
+            const notes = document.getElementById('notes').value;
             const total = document.getElementById('totalAmount').textContent;
             
             if (!clientName) {
@@ -499,7 +504,81 @@
                 return;
             }
             
-            alert(`📄 PDF generado para ${clientName}\nTotal: $${total}\n\n(En producción, esto generaría un PDF real)`);
+            // Crear PDF
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Header
+            doc.setFillColor(102, 126, 234);
+            doc.rect(0, 0, 210, 40, 'F');
+            
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(24);
+            doc.text('COTIZACIÓN', 105, 20, { align: 'center' });
+            
+            doc.setFontSize(12);
+            doc.text('Sebastián Martínez - Diseñador Web Freelance', 105, 30, { align: 'center' });
+            
+            // Información del cliente
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(14);
+            doc.text('Información del Cliente', 20, 55);
+            
+            doc.setFontSize(11);
+            doc.text(`Cliente: ${clientName}`, 20, 65);
+            doc.text(`Tipo de Negocio: ${businessType}`, 20, 72);
+            doc.text(`Fecha: ${new Date().toLocaleDateString('es-AR')}`, 20, 79);
+            
+            // Plan seleccionado
+            doc.setFontSize(14);
+            doc.text('Detalles del Proyecto', 20, 95);
+            
+            doc.setFontSize(11);
+            doc.text(`Plan: ${basePlan}`, 20, 105);
+            
+            // Extras seleccionados
+            const extras = Array.from(document.querySelectorAll('.checkbox-item input[type="checkbox"]:checked'))
+                .map(cb => cb.nextElementSibling.textContent);
+            
+            if (extras.length > 0) {
+                doc.text('Funcionalidades Adicionales:', 20, 115);
+                extras.forEach((extra, index) => {
+                    doc.text(`• ${extra}`, 25, 122 + (index * 7));
+                });
+            }
+            
+            // Urgencia
+            const yPos = extras.length > 0 ? 122 + (extras.length * 7) + 10 : 125;
+            doc.text(`Urgencia: ${urgency}`, 20, yPos);
+            
+            // Notas
+            if (notes) {
+                doc.text('Notas:', 20, yPos + 10);
+                const splitNotes = doc.splitTextToSize(notes, 170);
+                doc.text(splitNotes, 20, yPos + 17);
+            }
+            
+            // Total
+            const totalYPos = notes ? yPos + 40 : yPos + 20;
+            doc.setFillColor(102, 126, 234);
+            doc.rect(20, totalYPos, 170, 25, 'F');
+            
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(16);
+            doc.text('PRECIO TOTAL', 105, totalYPos + 10, { align: 'center' });
+            doc.setFontSize(24);
+            doc.text(`$${total}`, 105, totalYPos + 20, { align: 'center' });
+            
+            // Footer
+            doc.setTextColor(100, 100, 100);
+            doc.setFontSize(9);
+            doc.text('sebastian.webdesign@gmail.com | github.com/sebahs09', 105, 280, { align: 'center' });
+            doc.text('Diseño total entregado • Archivos finales en formato .rar • Sin costos ocultos', 105, 285, { align: 'center' });
+            
+            // Guardar PDF
+            doc.save(`Cotizacion_${clientName.replace(/\s+/g, '_')}_${new Date().toLocaleDateString('es-AR').replace(/\//g, '-')}.pdf`);
+            
+            alert('✅ PDF generado exitosamente!');
         }
 
         // Cargar datos al iniciar
