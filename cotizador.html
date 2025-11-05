@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotizador Pro - Sebastián Martínez</title>
+    <title>Cotizador IA Gratis - Sebastián Martínez</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
@@ -21,7 +21,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -36,23 +36,30 @@
         .header h1 {
             color: #1e293b;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header .badge {
+            background: #10b981;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         .header p {
             color: #64748b;
         }
 
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
         .card {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
         }
 
         .card h2 {
@@ -75,78 +82,25 @@
         }
 
         .form-group input,
-        .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: 2px solid #e2e8f0;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
+            font-family: inherit;
             transition: all 0.3s;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
         }
 
         .form-group input:focus,
-        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
-        }
-
-        .checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 10px;
-            background: #f8fafc;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .checkbox-item:hover {
-            background: #e0f2fe;
-        }
-
-        .checkbox-item input[type="checkbox"] {
-            width: auto;
-            cursor: pointer;
-        }
-
-        .checkbox-item label {
-            margin: 0;
-            cursor: pointer;
-            flex: 1;
-        }
-
-        .price-tag {
-            color: #667eea;
-            font-weight: 700;
-        }
-
-        .total-price {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .total-price h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-
-        .total-price .amount {
-            font-size: 3rem;
-            font-weight: 700;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
         }
 
         .btn {
@@ -157,6 +111,9 @@
             cursor: pointer;
             transition: all 0.3s;
             font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-primary {
@@ -170,91 +127,163 @@
             box-shadow: 0 10px 20px rgba(102,126,234,0.4);
         }
 
-        .btn-secondary {
-            background: #f59e0b;
-            color: white;
-            width: 100%;
-            margin-top: 1rem;
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
         }
 
-        .btn-secondary:hover {
-            background: #d97706;
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
         }
 
-        .history-item {
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .result {
+            display: none;
             background: #f8fafc;
-            padding: 1rem;
+            padding: 2rem;
             border-radius: 10px;
-            margin-bottom: 1rem;
             border-left: 4px solid #667eea;
         }
 
-        .history-item h4 {
+        .result.active {
+            display: block;
+        }
+
+        .result h3 {
             color: #1e293b;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .history-item p {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .stat-card {
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #667eea;
-        }
-
-        .stat-card .label {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        .market-prices {
-            background: #fef3c7;
-            padding: 1rem;
-            border-radius: 10px;
-            border-left: 4px solid #f59e0b;
+        .result-section {
             margin-bottom: 1.5rem;
         }
 
-        .market-prices h4 {
+        .result-section h4 {
+            color: #475569;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-section p {
+            color: #64748b;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .price-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .price-box .amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .prompt-box {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #475569;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .copy-btn:hover {
+            background: #64748b;
+        }
+
+        .example-prompts {
+            background: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .example-prompts h4 {
             color: #92400e;
+            margin-bottom: 1rem;
+        }
+
+        .example-prompts ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .example-prompts li {
+            color: #78350f;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #fde68a;
+        }
+
+        .example-prompts li:last-child {
+            border-bottom: none;
+        }
+
+        .info-box {
+            background: #dbeafe;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box h4 {
+            color: #1e40af;
             margin-bottom: 0.5rem;
         }
 
-        .market-prices p {
-            color: #78350f;
+        .info-box p {
+            color: #1e3a8a;
             font-size: 0.9rem;
-        }
-
-        @media (max-width: 968px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .checkbox-group {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -262,328 +291,379 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1><i class="fas fa-calculator"></i> Cotizador Pro</h1>
-            <p>Herramienta personal de cotización inteligente - Sebastián Martínez</p>
+            <h1>
+                <i class="fas fa-robot"></i> Cotizador IA 
+                <span class="badge">100% GRATIS</span>
+            </h1>
+            <p>IA inteligente sin costos - Analiza proyectos y genera cotizaciones automáticamente</p>
         </div>
 
-        <!-- Main Grid -->
-        <div class="main-grid">
-            <!-- Formulario de Cotización -->
-            <div class="card">
-                <h2><i class="fas fa-file-invoice-dollar"></i> Nueva Cotización</h2>
+        <!-- Info Box -->
+        <div class="card">
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> ¿Cómo funciona?</h4>
+                <p>Esta herramienta usa IA local (sin APIs de pago). Describe el proyecto del cliente y la IA analizará automáticamente qué plan necesita, calculará el precio y generará un prompt para crear la maqueta.</p>
+            </div>
+        </div>
 
-                <!-- Precios de Mercado -->
-                <div class="market-prices">
-                    <h4><i class="fas fa-chart-line"></i> Precios Competitivos 2024</h4>
-                    <p><strong>Básico:</strong> $80-120 | <strong>Estándar:</strong> $150-250 | <strong>E-commerce:</strong> $300-500</p>
-                </div>
+        <!-- Main Card -->
+        <div class="card">
+            <h2><i class="fas fa-comments"></i> Describe el Proyecto del Cliente</h2>
 
-                <form id="quoteForm">
-                    <div class="form-group">
-                        <label>Nombre del Cliente</label>
-                        <input type="text" id="clientName" required placeholder="Ej: Juan Pérez">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Tipo de Negocio</label>
-                        <input type="text" id="businessType" required placeholder="Ej: Barbería, Restaurante, Tienda">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Plan Base</label>
-                        <select id="basePlan" required>
-                            <option value="">Seleccionar...</option>
-                            <option value="100">Plan Básico - $100 (Landing Page)</option>
-                            <option value="200">Plan Estándar - $200 (Sitio Multi-página)</option>
-                            <option value="400">Plan E-commerce - $400 (Tienda Online)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Funcionalidades Adicionales</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="gallery" value="30">
-                                <label for="gallery">Galería Avanzada <span class="price-tag">+$30</span></label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="form" value="20">
-                                <label for="form">Formulario Contacto <span class="price-tag">+$20</span></label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="maps" value="15">
-                                <label for="maps">Google Maps <span class="price-tag">+$15</span></label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="booking" value="60">
-                                <label for="booking">Sistema Reservas <span class="price-tag">+$60</span></label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="blog" value="50">
-                                <label for="blog">Blog/Noticias <span class="price-tag">+$50</span></label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="newsletter" value="25">
-                                <label for="newsletter">Newsletter <span class="price-tag">+$25</span></label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="animations" value="40">
-                                <label for="animations">Animaciones Custom <span class="price-tag">+$40</span></label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="multilang" value="70">
-                                <label for="multilang">Multi-idioma <span class="price-tag">+$70</span></label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Urgencia</label>
-                        <select id="urgency">
-                            <option value="0">Normal (15-21 días)</option>
-                            <option value="0.3">Urgente (7-10 días) +30%</option>
-                            <option value="0.5">Express (3-5 días) +50%</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Notas Adicionales</label>
-                        <textarea id="notes" rows="3" placeholder="Detalles especiales del proyecto..."></textarea>
-                    </div>
-
-                    <div class="total-price">
-                        <h3>Precio Total</h3>
-                        <div class="amount">$<span id="totalAmount">0</span></div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Guardar Cotización
-                    </button>
-                    <button type="button" class="btn btn-secondary" onclick="generatePDF()">
-                        <i class="fas fa-file-pdf"></i> Generar PDF
-                    </button>
-                </form>
+            <!-- Ejemplos -->
+            <div class="example-prompts">
+                <h4><i class="fas fa-lightbulb"></i> Ejemplos de descripción:</h4>
+                <ul>
+                    <li>"Cliente tiene una barbería moderna en Palermo, quiere landing page con sistema de reservas online, galería de cortes y mapa de ubicación"</li>
+                    <li>"Restaurante gourmet necesita sitio web elegante con menú digital, fotos de platos, formulario de reservas y sección de chef"</li>
+                    <li>"Tienda de ropa online, necesita e-commerce con carrito, categorías de productos, filtros y pasarela de pago"</li>
+                    <li>"Gimnasio local quiere página simple con horarios, precios, formulario de contacto y galería de instalaciones"</li>
+                </ul>
             </div>
 
-            <!-- Historial y Estadísticas -->
-            <div>
-                <!-- Estadísticas -->
-                <div class="card" style="margin-bottom: 2rem;">
-                    <h2><i class="fas fa-chart-bar"></i> Estadísticas</h2>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="number" id="totalQuotes">0</div>
-                            <div class="label">Cotizaciones</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="number">$<span id="avgPrice">0</span></div>
-                            <div class="label">Promedio</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="number">$<span id="totalRevenue">0</span></div>
-                            <div class="label">Total</div>
-                        </div>
+            <form id="aiForm">
+                <div class="form-group">
+                    <label>Nombre del Cliente</label>
+                    <input type="text" id="clientName" required placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label>Descripción del Proyecto</label>
+                    <textarea id="projectDescription" required placeholder="Describe lo que necesita el cliente: tipo de negocio, funcionalidades, estilo, urgencia, etc."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="generateBtn">
+                    <i class="fas fa-magic"></i> Generar Cotización con IA
+                </button>
+            </form>
+
+            <!-- Loading -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p style="color: #64748b;">La IA está analizando el proyecto...</p>
+            </div>
+
+            <!-- Result -->
+            <div class="result" id="result">
+                <h3><i class="fas fa-check-circle"></i> Cotización Generada</h3>
+
+                <div class="result-section">
+                    <h4>Cliente</h4>
+                    <p id="clientNameResult"></p>
+                </div>
+
+                <div class="result-section">
+                    <h4>Análisis del Proyecto</h4>
+                    <p id="analysis"></p>
+                </div>
+
+                <div class="result-section">
+                    <h4>Plan Recomendado</h4>
+                    <p id="plan"></p>
+                </div>
+
+                <div class="result-section">
+                    <h4>Funcionalidades Incluidas</h4>
+                    <p id="features"></p>
+                </div>
+
+                <div class="price-box">
+                    <h3>Precio Estimado</h3>
+                    <div class="amount">$<span id="price">0</span></div>
+                </div>
+
+                <div class="result-section">
+                    <h4>Prompt para Generar Maqueta (Copiar y pegar en ChatGPT/Claude/v0.dev)</h4>
+                    <div class="prompt-box">
+                        <button class="copy-btn" onclick="copyPrompt()"><i class="fas fa-copy"></i> Copiar</button>
+                        <div id="mockupPrompt"></div>
                     </div>
                 </div>
 
-                <!-- Historial -->
-                <div class="card">
-                    <h2><i class="fas fa-history"></i> Historial Reciente</h2>
-                    <div id="historyList">
-                        <p style="color: #94a3b8; text-align: center; padding: 2rem;">No hay cotizaciones guardadas</p>
-                    </div>
-                </div>
+                <button class="btn btn-primary" onclick="generatePDF()" style="margin-top: 2rem;">
+                    <i class="fas fa-file-pdf"></i> Descargar PDF de Cotización
+                </button>
             </div>
         </div>
     </div>
 
     <script>
-        // Calcular precio en tiempo real
-        function calculatePrice() {
-            const basePlan = parseInt(document.getElementById('basePlan').value) || 0;
-            const urgency = parseFloat(document.getElementById('urgency').value);
+        // IA Local - Sistema de análisis inteligente
+        function analyzeProject(description) {
+            const desc = description.toLowerCase();
             
-            // Sumar extras
-            let extras = 0;
-            document.querySelectorAll('.checkbox-item input[type="checkbox"]:checked').forEach(checkbox => {
-                extras += parseInt(checkbox.value);
-            });
+            // Detectar tipo de proyecto
+            let basePlan = 'Básico';
+            let basePrice = 100;
             
-            // Calcular total
-            let total = basePlan + extras;
-            total = total + (total * urgency); // Aplicar urgencia
+            if (desc.includes('e-commerce') || desc.includes('tienda') || desc.includes('carrito') || desc.includes('vender')) {
+                basePlan = 'E-commerce';
+                basePrice = 400;
+            } else if (desc.includes('multi') || desc.includes('varias páginas') || desc.includes('secciones') || desc.includes('completo')) {
+                basePlan = 'Estándar';
+                basePrice = 200;
+            }
             
-            document.getElementById('totalAmount').textContent = Math.round(total);
-            return Math.round(total);
-        }
+            // Detectar extras
+            const extras = [];
+            let extrasCost = 0;
+            
+            if (desc.includes('galería') || desc.includes('fotos') || desc.includes('imágenes')) {
+                extras.push('Galería Avanzada');
+                extrasCost += 30;
+            }
+            if (desc.includes('formulario') || desc.includes('contacto')) {
+                extras.push('Formulario de Contacto');
+                extrasCost += 20;
+            }
+            if (desc.includes('mapa') || desc.includes('ubicación') || desc.includes('dirección')) {
+                extras.push('Google Maps');
+                extrasCost += 15;
+            }
+            if (desc.includes('reserva') || desc.includes('cita') || desc.includes('turno')) {
+                extras.push('Sistema de Reservas');
+                extrasCost += 60;
+            }
+            if (desc.includes('blog') || desc.includes('noticias') || desc.includes('artículos')) {
+                extras.push('Blog/Noticias');
+                extrasCost += 50;
+            }
+            if (desc.includes('newsletter') || desc.includes('suscripción')) {
+                extras.push('Newsletter');
+                extrasCost += 25;
+            }
+            if (desc.includes('animación') || desc.includes('interactivo')) {
+                extras.push('Animaciones Custom');
+                extrasCost += 40;
+            }
+            if (desc.includes('idioma') || desc.includes('bilingüe') || desc.includes('inglés')) {
+                extras.push('Multi-idioma');
+                extrasCost += 70;
+            }
+            
+            // Detectar urgencia
+            let urgencyMultiplier = 1;
+            let urgencyText = 'Normal (15-21 días)';
+            
+            if (desc.includes('urgente') || desc.includes('rápido') || desc.includes('pronto')) {
+                urgencyMultiplier = 1.3;
+                urgencyText = 'Urgente (7-10 días) +30%';
+            }
+            if (desc.includes('express') || desc.includes('inmediato') || desc.includes('ya')) {
+                urgencyMultiplier = 1.5;
+                urgencyText = 'Express (3-5 días) +50%';
+            }
+            
+            // Calcular precio total
+            const totalPrice = Math.round((basePrice + extrasCost) * urgencyMultiplier);
+            
+            // Detectar tipo de negocio
+            let businessType = 'negocio';
+            if (desc.includes('barbería') || desc.includes('peluquería')) businessType = 'barbería';
+            else if (desc.includes('restaurante') || desc.includes('comida')) businessType = 'restaurante';
+            else if (desc.includes('tienda') || desc.includes('ropa')) businessType = 'tienda';
+            else if (desc.includes('gimnasio') || desc.includes('fitness')) businessType = 'gimnasio';
+            else if (desc.includes('hotel') || desc.includes('hospedaje')) businessType = 'hotel';
+            
+            // Generar análisis
+            const analysis = `Proyecto de ${businessType} que requiere un sitio web ${basePlan.toLowerCase()}. ${extras.length > 0 ? `Incluye ${extras.length} funcionalidades adicionales.` : 'Sin extras adicionales.'} ${urgencyText !== 'Normal (15-21 días)' ? `Cliente solicita entrega ${urgencyText.toLowerCase()}.` : ''}`;
+            
+            // Generar prompt de maqueta MUY específico
+            const mockupPrompt = `Crea una maqueta HTML/CSS completa y funcional basada en esta descripción del cliente:
 
-        // Event listeners para cálculo en tiempo real
-        document.getElementById('basePlan').addEventListener('change', calculatePrice);
-        document.getElementById('urgency').addEventListener('change', calculatePrice);
-        document.querySelectorAll('.checkbox-item input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', calculatePrice);
-        });
+"${description}"
 
-        // Guardar cotización
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+CONTEXTO DEL PROYECTO:
+- Tipo de negocio: ${businessType}
+- Plan: ${basePlan}
+- Funcionalidades requeridas: ${extras.length > 0 ? extras.join(', ') : 'Básicas'}
+
+DISEÑO ESPECÍFICO:
+${businessType === 'barbería' ? '- Estilo: Masculino, moderno, colores oscuros (negro, gris, dorado)\n- Tipografía: Bold, impactante\n- Imágenes: Cortes de cabello, barberos trabajando' : ''}${businessType === 'restaurante' ? '- Estilo: Elegante, gourmet, colores cálidos (marrón, dorado, blanco)\n- Tipografía: Serif elegante\n- Imágenes: Platos gourmet, ambiente del restaurante' : ''}${businessType === 'tienda' ? '- Estilo: E-commerce moderno, limpio, colores vibrantes\n- Tipografía: Sans-serif clara\n- Imágenes: Productos destacados, categorías' : ''}${businessType === 'gimnasio' ? '- Estilo: Energético, motivacional, colores fuertes (rojo, negro)\n- Tipografía: Bold, deportiva\n- Imágenes: Personas entrenando, instalaciones' : ''}${businessType === 'hotel' ? '- Estilo: Lujoso, acogedor, colores suaves (beige, azul)\n- Tipografía: Elegante\n- Imágenes: Habitaciones, servicios, ubicación' : ''}${!['barbería', 'restaurante', 'tienda', 'gimnasio', 'hotel'].includes(businessType) ? '- Estilo: Profesional, moderno, colores corporativos\n- Tipografía: Sans-serif limpia\n- Imágenes: Relacionadas al negocio' : ''}
+
+SECCIONES OBLIGATORIAS:
+1. Header con navegación sticky
+2. Hero section con:
+   - Título principal relacionado al negocio
+   - Subtítulo descriptivo
+   - CTA principal
+   ${description.includes('imagen') || description.includes('foto') ? '- Imagen de fondo relevante' : ''}
+
+3. ${extras.includes('Galería Avanzada') ? 'Galería de imágenes con grid responsive (mínimo 6 imágenes)' : 'Sección de servicios/productos'}
+
+4. ${extras.includes('Sistema de Reservas') ? 'Formulario de reservas con:\n   - Selector de fecha\n   - Selector de hora\n   - Campo de nombre y contacto\n   - Botón de confirmación' : 'Sección informativa'}
+
+5. ${extras.includes('Formulario de Contacto') ? 'Formulario de contacto completo con:\n   - Nombre, Email, Teléfono\n   - Mensaje\n   - Validación básica' : 'Información de contacto'}
+
+6. ${extras.includes('Google Maps') ? 'Mapa de Google Maps integrado con ubicación' : 'Sección adicional'}
+
+7. ${extras.includes('Blog/Noticias') ? 'Sección de blog con cards de artículos' : ''}
+
+8. Footer con:
+   - Información de contacto
+   - Redes sociales
+   - Copyright
+
+REQUISITOS TÉCNICOS:
+- HTML5 semántico y accesible
+- CSS3 puro (sin frameworks)
+- Flexbox y Grid para layouts
+- Responsive design (mobile-first)
+- Animaciones CSS suaves en hover
+- Font Awesome 6 para iconos
+- Google Fonts (elige una apropiada)
+- Colores en variables CSS
+- Comentarios en el código
+
+FUNCIONALIDADES ESPECÍFICAS DEL CLIENTE:
+${description.split('.').map(sentence => sentence.trim()).filter(s => s.length > 10).map(s => `- ${s}`).join('\n')}
+
+IMPORTANTE:
+- El diseño debe reflejar EXACTAMENTE lo que el cliente describió
+- Usa placeholders realistas para imágenes
+- Incluye textos de ejemplo relevantes al negocio
+- El código debe ser production-ready
+- Incluye meta tags SEO básicos
+
+Genera el código HTML completo en un solo archivo con CSS embebido.`;
             
-            const quote = {
-                id: Date.now(),
-                date: new Date().toLocaleDateString('es-AR'),
-                clientName: document.getElementById('clientName').value,
-                businessType: document.getElementById('businessType').value,
-                basePlan: document.getElementById('basePlan').options[document.getElementById('basePlan').selectedIndex].text,
-                extras: Array.from(document.querySelectorAll('.checkbox-item input[type="checkbox"]:checked')).map(cb => cb.nextElementSibling.textContent),
-                urgency: document.getElementById('urgency').options[document.getElementById('urgency').selectedIndex].text,
-                notes: document.getElementById('notes').value,
-                total: calculatePrice()
+            return {
+                analysis,
+                plan: `Plan ${basePlan} - $${basePrice}`,
+                features: extras.length > 0 ? `• ${extras.join('\n• ')}\n\nUrgencia: ${urgencyText}` : `Sin extras adicionales\n\nUrgencia: ${urgencyText}`,
+                price: totalPrice,
+                mockupPrompt
             };
-            
-            // Guardar en localStorage
-            let quotes = JSON.parse(localStorage.getItem('quotes') || '[]');
-            quotes.unshift(quote);
-            localStorage.setItem('quotes', JSON.stringify(quotes));
-            
-            // Actualizar UI
-            loadHistory();
-            updateStats();
-            
-            alert('✅ Cotización guardada exitosamente!');
-            
-            // Limpiar formulario
-            document.getElementById('quoteForm').reset();
-            calculatePrice();
+        }
+
+        // Generar cotización
+        document.getElementById('aiForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const clientName = document.getElementById('clientName').value;
+            const description = document.getElementById('projectDescription').value;
+
+            // Mostrar loading
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('result').classList.remove('active');
+            document.getElementById('generateBtn').disabled = true;
+
+            // Simular procesamiento de IA (para efecto visual)
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            try {
+                // Analizar con IA local
+                const result = analyzeProject(description);
+
+                // Mostrar resultados
+                document.getElementById('clientNameResult').textContent = clientName;
+                document.getElementById('analysis').textContent = result.analysis;
+                document.getElementById('plan').textContent = result.plan;
+                document.getElementById('features').textContent = result.features;
+                document.getElementById('price').textContent = result.price;
+                document.getElementById('mockupPrompt').textContent = result.mockupPrompt;
+
+                // Guardar para PDF
+                window.currentQuote = {
+                    clientName,
+                    description,
+                    ...result
+                };
+
+                document.getElementById('loading').classList.remove('active');
+                document.getElementById('result').classList.add('active');
+
+            } catch (error) {
+                alert('❌ Error: ' + error.message);
+                console.error(error);
+            } finally {
+                document.getElementById('generateBtn').disabled = false;
+            }
         });
 
-        // Cargar historial
-        function loadHistory() {
-            const quotes = JSON.parse(localStorage.getItem('quotes') || '[]');
-            const historyList = document.getElementById('historyList');
-            
-            if (quotes.length === 0) {
-                historyList.innerHTML = '<p style="color: #94a3b8; text-align: center; padding: 2rem;">No hay cotizaciones guardadas</p>';
-                return;
-            }
-            
-            historyList.innerHTML = quotes.slice(0, 5).map(quote => `
-                <div class="history-item">
-                    <h4>${quote.clientName} - ${quote.businessType}</h4>
-                    <p><strong>Plan:</strong> ${quote.basePlan}</p>
-                    <p><strong>Total:</strong> $${quote.total} | <strong>Fecha:</strong> ${quote.date}</p>
-                </div>
-            `).join('');
+        // Copiar prompt
+        function copyPrompt() {
+            const prompt = document.getElementById('mockupPrompt').textContent;
+            navigator.clipboard.writeText(prompt);
+            alert('✅ Prompt copiado al portapapeles!');
         }
 
-        // Actualizar estadísticas
-        function updateStats() {
-            const quotes = JSON.parse(localStorage.getItem('quotes') || '[]');
-            
-            document.getElementById('totalQuotes').textContent = quotes.length;
-            
-            if (quotes.length > 0) {
-                const total = quotes.reduce((sum, q) => sum + q.total, 0);
-                const avg = Math.round(total / quotes.length);
-                
-                document.getElementById('avgPrice').textContent = avg;
-                document.getElementById('totalRevenue').textContent = total;
-            }
-        }
-
-        // Generar PDF real
+        // Generar PDF moderno
         function generatePDF() {
-            const clientName = document.getElementById('clientName').value;
-            const businessType = document.getElementById('businessType').value;
-            const basePlan = document.getElementById('basePlan').options[document.getElementById('basePlan').selectedIndex].text;
-            const urgency = document.getElementById('urgency').options[document.getElementById('urgency').selectedIndex].text;
-            const notes = document.getElementById('notes').value;
-            const total = document.getElementById('totalAmount').textContent;
-            
-            if (!clientName) {
-                alert('⚠️ Completa el formulario primero');
-                return;
-            }
-            
-            // Crear PDF
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
-            
-            // Header
+            const quote = window.currentQuote;
+
+            // Header moderno con gradiente simulado
             doc.setFillColor(102, 126, 234);
-            doc.rect(0, 0, 210, 40, 'F');
+            doc.rect(0, 0, 210, 50, 'F');
             
+            doc.setFillColor(118, 75, 162);
+            doc.triangle(210, 0, 210, 50, 150, 50, 'F');
+
             doc.setTextColor(255, 255, 255);
-            doc.setFontSize(24);
-            doc.text('COTIZACIÓN', 105, 20, { align: 'center' });
+            doc.setFontSize(28);
+            doc.text('COTIZACIÓN', 20, 25);
             
-            doc.setFontSize(12);
-            doc.text('Sebastián Martínez - Diseñador Web Freelance', 105, 30, { align: 'center' });
-            
-            // Información del cliente
+            doc.setFontSize(11);
+            doc.text('Generada con IA', 20, 35);
+            doc.text(new Date().toLocaleDateString('es-AR'), 170, 35);
+
+            // Cliente
             doc.setTextColor(0, 0, 0);
             doc.setFontSize(14);
-            doc.text('Información del Cliente', 20, 55);
+            doc.text('Cliente', 20, 65);
             
             doc.setFontSize(11);
-            doc.text(`Cliente: ${clientName}`, 20, 65);
-            doc.text(`Tipo de Negocio: ${businessType}`, 20, 72);
-            doc.text(`Fecha: ${new Date().toLocaleDateString('es-AR')}`, 20, 79);
-            
-            // Plan seleccionado
+            doc.text(quote.clientName, 20, 73);
+
+            // Análisis
             doc.setFontSize(14);
-            doc.text('Detalles del Proyecto', 20, 95);
+            doc.text('Análisis del Proyecto', 20, 88);
             
-            doc.setFontSize(11);
-            doc.text(`Plan: ${basePlan}`, 20, 105);
+            doc.setFontSize(10);
+            const analysisLines = doc.splitTextToSize(quote.analysis, 170);
+            doc.text(analysisLines, 20, 96);
+
+            // Plan
+            let yPos = 96 + (analysisLines.length * 5) + 10;
+            doc.setFontSize(14);
+            doc.text('Plan Recomendado', 20, yPos);
             
-            // Extras seleccionados
-            const extras = Array.from(document.querySelectorAll('.checkbox-item input[type="checkbox"]:checked'))
-                .map(cb => cb.nextElementSibling.textContent);
+            doc.setFontSize(10);
+            doc.text(quote.plan, 20, yPos + 8);
+
+            // Features
+            yPos += 20;
+            doc.setFontSize(14);
+            doc.text('Funcionalidades', 20, yPos);
             
-            if (extras.length > 0) {
-                doc.text('Funcionalidades Adicionales:', 20, 115);
-                extras.forEach((extra, index) => {
-                    doc.text(`• ${extra}`, 25, 122 + (index * 7));
-                });
-            }
-            
-            // Urgencia
-            const yPos = extras.length > 0 ? 122 + (extras.length * 7) + 10 : 125;
-            doc.text(`Urgencia: ${urgency}`, 20, yPos);
-            
-            // Notas
-            if (notes) {
-                doc.text('Notas:', 20, yPos + 10);
-                const splitNotes = doc.splitTextToSize(notes, 170);
-                doc.text(splitNotes, 20, yPos + 17);
-            }
-            
-            // Total
-            const totalYPos = notes ? yPos + 40 : yPos + 20;
+            doc.setFontSize(10);
+            const featureLines = doc.splitTextToSize(quote.features, 170);
+            doc.text(featureLines, 20, yPos + 8);
+
+            // Precio destacado
+            yPos += 8 + (featureLines.length * 5) + 15;
             doc.setFillColor(102, 126, 234);
-            doc.rect(20, totalYPos, 170, 25, 'F');
+            doc.roundedRect(20, yPos, 170, 30, 5, 5, 'F');
             
             doc.setTextColor(255, 255, 255);
-            doc.setFontSize(16);
-            doc.text('PRECIO TOTAL', 105, totalYPos + 10, { align: 'center' });
-            doc.setFontSize(24);
-            doc.text(`$${total}`, 105, totalYPos + 20, { align: 'center' });
-            
+            doc.setFontSize(14);
+            doc.text('PRECIO TOTAL', 105, yPos + 12, { align: 'center' });
+            doc.setFontSize(32);
+            doc.text(`$${quote.price}`, 105, yPos + 25, { align: 'center' });
+
             // Footer
             doc.setTextColor(100, 100, 100);
             doc.setFontSize(9);
-            doc.text('sebastian.webdesign@gmail.com | github.com/sebahs09', 105, 280, { align: 'center' });
-            doc.text('Diseño total entregado • Archivos finales en formato .rar • Sin costos ocultos', 105, 285, { align: 'center' });
-            
-            // Guardar PDF
-            doc.save(`Cotizacion_${clientName.replace(/\s+/g, '_')}_${new Date().toLocaleDateString('es-AR').replace(/\//g, '-')}.pdf`);
+            doc.text('Sebastián Martínez - Diseñador Web Freelance', 105, 280, { align: 'center' });
+            doc.text('sebastian.webdesign@gmail.com | github.com/sebahs09', 105, 285, { align: 'center' });
+
+            // Guardar
+            doc.save(`Cotizacion_${quote.clientName.replace(/\s+/g, '_')}_${new Date().toLocaleDateString('es-AR').replace(/\//g, '-')}.pdf`);
             
             alert('✅ PDF generado exitosamente!');
         }
-
-        // Cargar datos al iniciar
-        loadHistory();
-        updateStats();
     </script>
 </body>
 </html>
