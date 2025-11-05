@@ -304,6 +304,17 @@
                 <h4><i class="fas fa-info-circle"></i> ¿Cómo funciona?</h4>
                 <p>Esta herramienta usa IA local (sin APIs de pago). Describe el proyecto del cliente y la IA analizará automáticamente qué plan necesita, calculará el precio y generará un prompt para crear la maqueta.</p>
             </div>
+            
+            <div class="example-prompts" style="margin-top: 1rem;">
+                <h4><i class="fas fa-dollar-sign"></i> Precios de Referencia (USD)</h4>
+                <ul style="font-size: 0.9rem;">
+                    <li><strong>Landing Page (1 página):</strong> $80-120 → Promedio: $100</li>
+                    <li><strong>Sitio Pequeño (3-5 páginas):</strong> $150-250 → Promedio: $200</li>
+                    <li><strong>Sitio Mediano (6-10 páginas):</strong> $250-350 → Promedio: $300</li>
+                    <li><strong>E-commerce (tienda online):</strong> $350-500+ → Promedio: $400</li>
+                    <li><strong>Diseño personalizado avanzado:</strong> $400-600 → Promedio: $500</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Main Card -->
@@ -392,53 +403,69 @@
         function analyzeProject(description) {
             const desc = description.toLowerCase();
             
-            // Detectar tipo de proyecto
-            let basePlan = 'Básico';
+            // Detectar tipo de proyecto con más precisión
+            let basePlan = 'Landing Page (1 página)';
             let basePrice = 100;
             
-            if (desc.includes('e-commerce') || desc.includes('tienda') || desc.includes('carrito') || desc.includes('vender')) {
+            // E-commerce
+            if (desc.includes('e-commerce') || desc.includes('tienda') || desc.includes('carrito') || desc.includes('vender') || desc.includes('productos')) {
                 basePlan = 'E-commerce';
                 basePrice = 400;
-            } else if (desc.includes('multi') || desc.includes('varias páginas') || desc.includes('secciones') || desc.includes('completo')) {
-                basePlan = 'Estándar';
+            }
+            // Sitio Mediano (6-10 páginas)
+            else if (desc.includes('6') || desc.includes('7') || desc.includes('8') || desc.includes('9') || desc.includes('10') || desc.includes('mediano') || desc.includes('completo') || desc.includes('muchas secciones')) {
+                basePlan = 'Sitio Mediano (6-10 páginas)';
+                basePrice = 300;
+            }
+            // Sitio Pequeño (3-5 páginas)
+            else if (desc.includes('3') || desc.includes('4') || desc.includes('5') || desc.includes('multi') || desc.includes('varias páginas') || desc.includes('pequeño')) {
+                basePlan = 'Sitio Pequeño (3-5 páginas)';
                 basePrice = 200;
             }
             
-            // Detectar extras
+            // Detectar extras según tabla de mercado
             const extras = [];
             let extrasCost = 0;
             
-            if (desc.includes('galería') || desc.includes('fotos') || desc.includes('imágenes')) {
-                extras.push('Galería Avanzada');
+            // Carga de contenido
+            if (desc.includes('contenido') || desc.includes('textos') || desc.includes('redacción') || desc.includes('buscar imágenes')) {
+                extras.push('🖼️ Carga de contenido (+$20-50)');
+                extrasCost += 35;
+            }
+            // Diseño 100% personalizado
+            if (desc.includes('personalizado') || desc.includes('desde cero') || desc.includes('único') || desc.includes('exclusivo')) {
+                extras.push('🎨 Diseño 100% personalizado (+$50-100)');
+                extrasCost += 75;
+            }
+            // Optimización móvil avanzada
+            if (desc.includes('móvil') || desc.includes('mobile-first') || desc.includes('responsive avanzado')) {
+                extras.push('📱 Optimización móvil avanzada (+$20-40)');
                 extrasCost += 30;
             }
-            if (desc.includes('formulario') || desc.includes('contacto')) {
-                extras.push('Formulario de Contacto');
-                extrasCost += 20;
+            // Formulario avanzado
+            if (desc.includes('formulario avanzado') || desc.includes('validación') || desc.includes('formulario dinámico')) {
+                extras.push('💬 Formulario avanzado (+$15-30)');
+                extrasCost += 22;
             }
-            if (desc.includes('mapa') || desc.includes('ubicación') || desc.includes('dirección')) {
-                extras.push('Google Maps');
-                extrasCost += 15;
+            // Google Maps / Redes sociales
+            if (desc.includes('mapa') || desc.includes('ubicación') || desc.includes('instagram') || desc.includes('redes sociales')) {
+                extras.push('🗺️ Google Maps / Redes sociales (+$10-25)');
+                extrasCost += 17;
             }
-            if (desc.includes('reserva') || desc.includes('cita') || desc.includes('turno')) {
-                extras.push('Sistema de Reservas');
-                extrasCost += 60;
-            }
-            if (desc.includes('blog') || desc.includes('noticias') || desc.includes('artículos')) {
-                extras.push('Blog/Noticias');
+            // Animaciones JS
+            if (desc.includes('animación') || desc.includes('efectos') || desc.includes('parallax') || desc.includes('interactivo')) {
+                extras.push('⚡ Animaciones JS / Efectos especiales (+$25-75)');
                 extrasCost += 50;
             }
-            if (desc.includes('newsletter') || desc.includes('suscripción')) {
-                extras.push('Newsletter');
-                extrasCost += 25;
+            // Traducción bilingüe
+            if (desc.includes('idioma') || desc.includes('bilingüe') || desc.includes('inglés') || desc.includes('traducción')) {
+                extras.push('🧾 Traducción bilingüe (+$40-80)');
+                extrasCost += 60;
             }
-            if (desc.includes('animación') || desc.includes('interactivo')) {
-                extras.push('Animaciones Custom');
-                extrasCost += 40;
-            }
-            if (desc.includes('idioma') || desc.includes('bilingüe') || desc.includes('inglés')) {
-                extras.push('Multi-idioma');
-                extrasCost += 70;
+            // APIs externas
+            if (desc.includes('api') || desc.includes('whatsapp') || desc.includes('reservas') || desc.includes('integración')) {
+                extras.push('🔒 Integración APIs externas (+$30-100)');
+                extrasCost += 65;
             }
             
             // Detectar urgencia
